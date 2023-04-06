@@ -1,21 +1,26 @@
 <template>
-<div class="relative min-h-screen flex">
 
-    <div class="bg-red-800 text-blue-100 w-64">
+    <div>
     <!-- logo -->
-    logo
+    <header>
+        <div>
+            <img src="../assets/bure_logo.png" />
+            <p>Bure s.p.</p>
+        </div>
+    </header>
+
+    
 
     <!-- nav -->
-    <nav>
-    <div class="flex flex-row"> <router-link to="/">Home</router-link> </div>
-    <div class="flex flex-row"><router-link to="/about">About Me</router-link> </div> 
-    <div class="flex flex-row"><router-link to="/projects">Projects</router-link></div>  
-    <div class="flex flex-row"><router-link to="/contact">Contact</router-link></div>
-    </nav>
+    <div class="mt-12 flex flex-col gap-2 justify-center align-center">
+        <div class="nav-item flex flex-row justify-center"><a href="#home">{{ 'Home' }}</a></div>
+        <div class="nav-item flex flex-row justify-center"><a href="#about">{{ 'About' }}</a></div>
+        <div class="nav-item flex flex-row justify-center"><a href="#projects">{{ 'Projects' }}</a></div>
+        <div class="nav-item flex flex-row justify-center"><a href="#contact">{{ 'Contact' }}</a></div>
+    </div>
 
     </div>
-</div>
-<router-view/>
+
 </template>
 
 <script>
@@ -29,16 +34,16 @@
 </script>
 
 <style scoped>
-nav {
-  padding: 30px;
+.navbar {
+    font-weight: bold;
+    border-right: 1px solid black;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.nav-item {
+    padding: 5px;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.nav-item:hover {
+    background: black;
 }
 </style>
