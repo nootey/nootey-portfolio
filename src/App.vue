@@ -1,9 +1,7 @@
 <template>
-  <div id="app" class="h-screen flex w-100">
-    <div class="navbar fixed top-0 left-0 h-screen">
+  <div id="app">
       <Navbar />
-    </div>
-    <div class="content-wrapper ml-64">
+    <div class="content-wrapper">
       <Home />
       <About />
       <Projects />
@@ -35,7 +33,7 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter Tight', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -47,19 +45,14 @@ html {
 }
 
 .smoothie-container {
-  width: 100%;
-}
-
-.navbar{
-  display: flex;
-  position: fixed;
-  height: 100%;
-  width: 250px;
-  padding: 25px;
-  border-right: 2px solid grey;
+  width: 95%;
+  padding-top: 55px;
+  padding-inline: 50px;
+  overflow-y: hidden;
 }
 
 .content-wrapper {
+  /* padding-top: 60px; */
   margin-bottom: 80px;
   width: 100%;
 }
