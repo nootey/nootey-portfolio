@@ -2,7 +2,6 @@
 
         <div class="nav-wrapper flex flex-row">
             <div class="navbar">
-
                 <!-- logo -->
                 <div class="logo flex flex-row text-center align-items-center">
                     <img src="../assets/bure_logo.png" />
@@ -15,7 +14,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <i class="fa-solid fa-moon"></i>
+                    <i class="mobile-icon-link" :class="darkMode ? ['fa-solid fa-sun', 'hover-dark'] : ['fa-solid fa-moon', 'hover-light']" @click="callEmit"></i>
                 </ul>
 
                 <div class="toggle-btn">
@@ -28,7 +27,7 @@
                 <li class="mobile-link"><a href="#about">About</a></li>
                 <li class="mobile-link"><a href="#projects">Projects</a></li>
                 <li class="mobile-link"><a href="#contact">Contact</a></li>
-                <i class="fa-solid fa-moon mobile-icon-link"></i>
+                <i class="mobile-icon-link" :class="darkMode ? ['fa-solid fa-sun', 'hover-dark'] : ['fa-solid fa-moon', 'hover-light']" @click="callEmit"></i>
             </div>
         </div>
    
@@ -39,7 +38,9 @@
  import { ref, onMounted, onUnmounted, watch } from 'vue';
 
  export default {
-    setup(){
+    emits: ['changeTheme'],
+    props: ['darkMode'],
+    setup(props, { emit }){
         onMounted(() => window.addEventListener('resize', onWidthChange))
         onUnmounted(() => window.removeEventListener('resize', onWidthChange))
         const nav = ref(false);
@@ -67,6 +68,10 @@
             }
         }
 
+        function callEmit(){
+            emit('changeTheme')
+        }
+
         watchWidth();
 
         watch(window_width, () => {
@@ -79,6 +84,7 @@
         mobile_nav,
         toggleNavbar,
         nav_open,
+        callEmit,
     }
 }
  }
@@ -88,8 +94,7 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
 .nav-wrapper{
-    z-index: 1;
-    background: white;
+    z-index: 2;
     padding-inline: 20px;
     padding-bottom: 5px;
     position: fixed;
@@ -110,14 +115,14 @@ a {
 }
 
 a:hover{
-    color: red;
+    color: var(--accent-color);
 }
 
 .navbar {
     z-index: 2;
     width: 100%;
     height: 60px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -132,6 +137,8 @@ a:hover{
 .navbar .links {
     display: flex;
     gap: 2rem;
+    align-items: center;
+    
 }
 .navbar .toggle-btn {
     font-size: 1.3rem;
@@ -146,12 +153,13 @@ a:hover{
     top: 60px;
     width: 175px;
     height: 0;
-    background-color: rgba(233, 233, 233, 0.5);
+    background-color: rgba(var(--background-color-primary), 0.5);
     backdrop-filter: blur(50px);
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     overflow: hidden;
     transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 2;
+    z-index: 3;
 }
 
 .dropdown-menu.open {
@@ -163,6 +171,7 @@ a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba(var(--background-color-primary), 0.5);
 }
 
 .dropdown-menu .action-btn {
@@ -172,14 +181,21 @@ a:hover{
 }
 
 .dropdown-menu li:hover {
-    color: red;
+    color: var(--accent-color);
     cursor: pointer;
     font-size: 1.3rem;
 }
 
-.dropdown-menu .mobile-icon-link:hover{
-    color: orange;
+.mobile-icon-link:hover{
     cursor: pointer;
+}
+
+.hover-light:hover {
+    color: #FFB10F;
+    }
+
+.hover-dark:hover {
+    color: #FF4F0F;
 }
 
 @media(max-width: 992px){

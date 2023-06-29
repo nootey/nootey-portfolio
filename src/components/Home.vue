@@ -1,6 +1,6 @@
 <template>
   <Smoothie id="home" :weight="0.03" class="smoothie-container">
-      <div class="h-screen flex-col mt-2">  
+      <div class="h-screen flex-col">  
 
       <div class="welcome-header p-3 flex flex-row w-100"> {{ "Hello, I'm Jure!" }}</div>
 
