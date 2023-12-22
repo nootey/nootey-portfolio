@@ -6,7 +6,7 @@
 
         <div class="paragraph-text flex flex-row p-3 text-left mt-8"> Welcome! I'm a full-stack software engineer based in Slovenia. I recently graduated from University of Ljubljana, 
           Faculty of electrical engineering.  I am equipped with a solid foundation in computer science and a hunger for continuous learning and growth in the ever-evolving world of technology.
-          I'm passionate about software devlopment, artificial intelligence and design.
+          I'm passionate about software development, artificial intelligence and design.
         </div>
   <!-- 
         <div class="paragraph-text  flex flex-row p-3 text-left mt-4"> 

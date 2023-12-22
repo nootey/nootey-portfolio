@@ -4,7 +4,7 @@
             <div class="navbar">
                 <!-- logo -->
                 <div class="logo flex flex-row text-center align-items-center">
-                    <img src="../assets/bure_logo.png" />
+<!--                    <img src="../assets/bure_logo.png" />-->
                     <div class="mt-2"> {{ "Bure" }}</div>
                 </div>
             
@@ -14,11 +14,11 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <i class="mobile-icon-link" :class="darkMode ? ['fa-solid fa-sun', 'hover-dark'] : ['fa-solid fa-moon', 'hover-light']" @click="callEmit"></i>
+                  <font-awesome-icon class="mobile-icon-link" :class="darkMode ? 'hover-dark' : 'hover-light'" :icon="darkMode ? 'fa-solid fa-moon' : 'fa-solid fa-sun'" @click="callEmit"/>
                 </ul>
 
                 <div class="toggle-btn">
-                    <i @click="toggleNavbar" class="fa-solid fa-bars" :class="{'fa-solid fa-xmark': nav_open}"></i>
+                  <font-awesome-icon class="mobile-icon-link" :class="{'fa-solid fa-xmark': nav_open}" icon="fa-solid fa-bars" @click="toggleNavbar"/>
                 </div>
             </div>
 
@@ -27,7 +27,7 @@
                 <li class="mobile-link"><a href="#about">About</a></li>
                 <li class="mobile-link"><a href="#projects">Projects</a></li>
                 <li class="mobile-link"><a href="#contact">Contact</a></li>
-                <i class="mobile-icon-link" :class="darkMode ? ['fa-solid fa-sun', 'hover-dark'] : ['fa-solid fa-moon', 'hover-light']" @click="callEmit"></i>
+                <li class="mobile-link"><font-awesome-icon class="mobile-icon-link" :class="darkMode ? 'hover-dark' : 'hover-light'" :icon="darkMode ? 'fa-solid fa-moon' : 'fa-solid fa-sun'" @click="callEmit"/></li>
             </div>
         </div>
    
@@ -91,7 +91,6 @@
 </script>
 
 <style scoped>
-@import "~@fortawesome/fontawesome-free/css/all.min.css";
 
 .nav-wrapper{
     z-index: 2;
