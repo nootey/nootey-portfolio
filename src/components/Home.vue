@@ -1,79 +1,60 @@
 <template>
   <Smoothie id="home" :weight="0.03" class="smoothie-container">
-      <div class="h-screen flex flex-col gap-8">  
+      <div class="col p-5 g-3">
 
-        <div class="welcome-header p-3 flex flex-row w-100"> {{ "Hello, I'm Jure!" }}</div>
+        <div class="welcome-header p-4 row w-100 text-center justify-content-center"> {{ "Hello, I'm Jure!" }}</div>
 
-        <div class="paragraph-text flex flex-row p-3 text-left mt-8"> Welcome! I'm a full-stack software engineer based in Slovenia. I recently graduated from University of Ljubljana, 
-          Faculty of electrical engineering.  I am equipped with a solid foundation in computer science and a hunger for continuous learning and growth in the ever-evolving world of technology.
-          I'm passionate about software development, artificial intelligence and design.
+        <div class="paragraph-text flex flex-row p-3 text-left mt-3">
+          Welcome! I'm a full-stack software engineer based in Slovenia. I am a graduate from University of Ljubljana,
+          Faculty of electrical engineering.
         </div>
-  <!-- 
-        <div class="paragraph-text  flex flex-row p-3 text-left mt-4"> 
-          My main tech stack: 
-          <ul class="portfolio-list">
-            <li>Laravel</li>
-            <li>Vue</li>
-            <li>MySQL</li>
-            <li>Python</li>
-          </ul>
+
+        <div class="paragraph-text flex flex-row p-3 text-left  mt-3">
+          I am equipped with a solid foundation in computer science and a hunger for continuous learning and growth in the ever-evolving world of technology.
         </div>
 
 
-        <div class="paragraph-text  flex flex-row p-3 text-left mt-4"> 
-        I'm currently working with: 
+        <div class="paragraph-text row p-4 mx-auto text-center justify-content-center mt-3">
+          <div class="col col-auto min-width-col">
+            <a href="#contact">
+              <button class="btn btn-primary" tabIndex="-1">Projects</button>
+            </a>
+          </div>
 
-          <div class="flex flex-col w-50 ml-8">
-              <div class="flex flex-row">GO</div>
-              <div class="flex flex-row">Vue</div>
-              <div class="flex flex-row">MongoDB</div>
+          <div class="col col-auto min-width-col">
+            <a href="#contact">
+              <button class="btn btn-primary" tabIndex="-1">Contact</button>
+            </a>
           </div>
         </div>
 
-        <div class="paragraph-text  flex flex-row p-3 text-left mt-4"> 
-        I'm currently learning: 
-
-          <div class="flex flex-col w-50 ml-8">
-              <div class="flex flex-row">Rust</div>
-          </div>
-        </div> -->
-
-        
-        <div class="flex flex-row p-3 text-left mt-8"> BURE, Jure Bovha s.p.</div>
-
-        <div class="flex flex-row p-3 w-100 gap-4 mt-4">
-
-          <div class="flex flex-col w-50">
-          <a>View my projects</a>
-          </div>
-
-          <div class="flex flex-col w-50">
-            <a>Contact me</a>
-          </div>
-        
+        <div class="row mx-auto text-center justify-content-center p-3 mt-5">
+          <a class="arrow bounce col col-auto min-width-col" href="#about">
+            <img src="@/assets/images/arrow-dark.png"
+                 width="50"/>
+          </a>
         </div>
-
       </div>
   </Smoothie>
  
 </template>
   
-  <script>
-  import { Smoothie } from "vue-smoothie";
+<script>
+import { Smoothie } from "vue-smoothie";
 
-  export default {
-    name: 'Home',
-    components: {Smoothie},
-    setup() {
-      return {
+export default {
+  name: 'Home',
+  components: {Smoothie},
+  setup() {
+    return {
 
-      }
     }
   }
-  </script>
+}
+</script>
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <style scoped>
+<style scoped>
 .welcome-header {
   font-family: 'Source Code Pro', monospace;
   font-size: 5rem;
@@ -100,35 +81,26 @@
   50% { border-color: var(--accent-color); }
 }
 
-.paragraph-text {
-  font-size: 1.4rem;
+.arrow {
+  text-align: center;
+  margin: 8% 0;
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
 }
 
-.portfolio-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.portfolio-list li {
-  font-size: 18px;
-  margin-bottom: 10px;
-  padding: 10px 20px;
-  background-color: #f2f2f2;
-  border-radius: 4px;
-  color: #333;
-}
-
-.portfolio-list li:hover {
-  background-color: #e0e0e0;
-}
-
-.portfolio-list li:first-child {
-  margin-top: 10px;
-}
-
-.portfolio-list li:last-child {
-  margin-bottom: 0;
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
 }
 
 </style>

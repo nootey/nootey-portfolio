@@ -14,7 +14,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
-                  <font-awesome-icon class="mobile-icon-link" :class="darkMode ? 'hover-dark' : 'hover-light'" :icon="darkMode ? 'fa-solid fa-moon' : 'fa-solid fa-sun'" @click="callEmit"/>
+                  <font-awesome-icon class="mobile-icon-link" :class="{ 'hover-dark': darkMode, 'hover-light': !darkMode }" :icon="darkMode ? 'fa-solid fa-moon' : 'fa-solid fa-sun'" @click="callEmit"/>
                 </ul>
 
                 <div class="toggle-btn">
@@ -28,6 +28,7 @@
                 <li class="mobile-link"><a href="#projects">Projects</a></li>
                 <li class="mobile-link"><a href="#contact">Contact</a></li>
                 <li class="mobile-link"><font-awesome-icon class="mobile-icon-link" :class="darkMode ? 'hover-dark' : 'hover-light'" :icon="darkMode ? 'fa-solid fa-moon' : 'fa-solid fa-sun'" @click="callEmit"/></li>
+
             </div>
         </div>
    
@@ -180,7 +181,6 @@ a:hover{
 }
 
 .dropdown-menu li:hover {
-    color: var(--accent-color);
     cursor: pointer;
     font-size: 1.3rem;
 }
@@ -191,7 +191,7 @@ a:hover{
 
 .hover-light:hover {
     color: #FFB10F;
-    }
+}
 
 .hover-dark:hover {
     color: #FF4F0F;
@@ -208,6 +208,35 @@ a:hover{
     .dropdown-menu {
         display: block;
     }
+}
+
+a{
+  text-decoration: none;
+  color: var(--text-color-primary);
+}
+
+li {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 3px;
+  margin-right: 10px;
+}
+li:last-child {
+  margin-right: 0;
+}
+
+li:after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0px;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+}
+li:hover:after {
+  width: 100%;
+  background: var(--accent-color);
 }
 
 </style>

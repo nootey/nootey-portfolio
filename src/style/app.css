@@ -6,7 +6,10 @@ html[theme='light'] {
     --background-color-secondary: #f5f5f5;
     --background-color-tertiary: #E3E3E3;
     --accent-color: #248EFF;
-    --accent-color-alt: #3E5E9D;
+    --accent-grad-1: #86C1FF;
+    --accent-grad-2: #5DACFF;
+    --accent-grad-3: #44A0FF;
+    --accent-grad-4: #0780FE;
     --border-color: #DEE2E6;
     --text-color-primary: #222;
     --text-color-secondary: #4A4949;
@@ -19,7 +22,10 @@ html[theme='dark'] {
     --background-color-secondary: #2B2B2B;
     --background-color-tertiary: #1E1E1E;
     --accent-color: #9014FF;
-    --accent-color-alt: #461B6B;
+    --accent-grad-1: #D19FFE;
+    --accent-grad-2: #BA6DFF;
+    --accent-grad-3: #A43FFF;
+    --accent-grad-4: #8600FF;
     --border-color: #555555;
     --text-color-primary: #FFFFFF;
     --text-color-secondary: #BEBEBE;
@@ -34,3 +40,35 @@ html[theme='dark'] {
     color: var(--text-color-primary);
     background: var(--background-color-primary);
 }
+
+.paragraph-text {
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.title{
+    text-align: left;
+    padding-left: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.btn.btn-primary {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding: 0 3rem;
+    border: 0;
+    border-radius: 3rem;
+    background-image:linear-gradient(131deg, var(--accent-grad-1), var(--accent-grad-2), var(--accent-grad-3), var(--accent-grad-4));
+    background-size: 300% 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn.btn-primary:hover:enabled {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--accent-grad-3);
+    background-size: 100% 100%;
+    transform: translateY(-0.15em);
+}
+

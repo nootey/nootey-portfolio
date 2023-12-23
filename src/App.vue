@@ -55,7 +55,6 @@ export default {
 
 <style>
 
-
 #app {
   font-family: 'Inter Tight', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -67,7 +66,6 @@ export default {
 html {
   scroll-behavior: smooth;
 }
-
 
 .content-wrapper {
   padding-top: 80px;
@@ -84,12 +82,12 @@ html {
 }
 
 .smoothie-container {
-  width: 95%;
-  height: 99%;
+  width: 100%;
+  height: 95vh;
   padding-top: 80px;
   padding-inline: 50px;
   margin: 0 auto;
-  overflow-y: hidden;
+  overflow: hidden !important;
   color: var(--text-color-primary);
   background: var(--background-color-primary);
 }
