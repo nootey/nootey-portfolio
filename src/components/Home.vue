@@ -1,39 +1,64 @@
 <template>
-  <Smoothie id="home" :weight="0.03" class="smoothie-container">
-      <div class="col p-5 g-3">
+  <Smoothie id="home" :weight="0.03" class="smoothie-container" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
 
-        <div class="welcome-header p-4 row w-100 text-center justify-content-center"> {{ "Hello, I'm Jure!" }}</div>
+      <div class="col p-2 mt-4">
 
-        <div class="paragraph-text flex flex-row p-3 text-left mt-3">
-          Welcome! I'm a full-stack software engineer based in Slovenia. I am a graduate from University of Ljubljana,
-          Faculty of electrical engineering.
+        <div class="row w-100 align-items-center justify-content-center gap-3">
+
+            <div class="col w-50">
+
+              <div class="typed-out" style="margin-left: 0; padding: 0.25rem 0 0.25rem 0.5rem">
+                {{ "Hello there!" }}
+              </div>
+
+              <div class="paragraph-text row p-2 text-left mt-2">
+                I provide businesses with cutting-edge digital solutions 
+                tailored to their needs, including website design, web development, 
+                web applications, and digital marketing.
+              </div>           
+              
+              <div class="paragraph-text row p-2 text-left">
+                I am equipped with a solid foundation in computer science 
+                and a hunger for continuous learning and growth in the ever-evolving world of technology.
+              </div>
+
+            </div>     
+            
+            <div class="col w-50">
+              <img src="@/assets/images/welcomepage_placeholder.svg" alt="Welcome placeholder"
+              style="width: 100%; height: auto;">
+            </div>
+
         </div>
 
-        <div class="paragraph-text flex flex-row p-3 text-left  mt-3">
-          I am equipped with a solid foundation in computer science and a hunger for continuous learning and growth in the ever-evolving world of technology.
-        </div>
+        <div class="row w-100 gap-3 mt-5">
 
-
-        <div class="paragraph-text row p-4 mx-auto text-center justify-content-center mt-3">
-          <div class="col col-auto min-width-col">
-            <a href="#contact">
-              <button class="btn btn-primary" tabIndex="-1">Projects</button>
+          <div class="paragraph-text row p-2 mt-4">
+          
+            <div class="col col-auto min-width-col">
+            <a href="#projects">
+              <button class="main-button" tabIndex="-1">Projects</button>
             </a>
-          </div>
+            </div>
 
           <div class="col col-auto min-width-col">
             <a href="#contact">
-              <button class="btn btn-primary" tabIndex="-1">Contact</button>
+              <button class="main-button" tabIndex="-1">Contact</button>
             </a>
           </div>
         </div>
 
         <div class="row mx-auto text-center justify-content-center p-3 mt-5">
           <a class="arrow bounce col col-auto min-width-col" href="#about">
-            <img src="@/assets/images/arrow-dark.png"
+            <img v-if="darkMode" src="@/assets/images/arrow-light.png"
+                 width="50"/>
+            <img v-else src="@/assets/images/arrow-dark.png"
                  width="50"/>
           </a>
         </div>
+
+        </div>
+
       </div>
   </Smoothie>
  
@@ -44,6 +69,7 @@ import { Smoothie } from "vue-smoothie";
 
 export default {
   name: 'Home',
+  props: ['darkMode'],
   components: {Smoothie},
   setup() {
     return {
@@ -55,28 +81,29 @@ export default {
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.welcome-header {
+.typed-out {
   font-family: 'Source Code Pro', monospace;
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 1000;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid var(--accent-color); /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
+  letter-spacing: .1em; /* Adjust as needed */
+  max-width: min-content;
   animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+    typing 3s steps(20, end) forwards,
+    blink .8s infinite;
 }
 
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 100% }
+  to { width: 90% }
 }
 
 /* The typewriter cursor effect */
-@keyframes blink-caret {
+@keyframes blink {
   from, to { border-color: transparent }
   50% { border-color: var(--accent-color); }
 }
