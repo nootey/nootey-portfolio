@@ -5,16 +5,16 @@
                 <!-- logo -->
                 <div class="logo flex flex-row text-center align-items-center">
 <!--                    <img src="../assets/bure_logo.png" />-->
-                    <div class="mt-2"> {{ "Bure" }}</div>
+                    <div class="mt-2"> {{ "Logo" }}</div>
                 </div>
             
                 <!-- nav -->
                 <ul class="links" v-show="!mobile">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                  <font-awesome-icon class="mobile-icon-link" :class="{ 'hover-dark': darkMode, 'hover-light': !darkMode }" :icon="darkMode ? 'fa-solid fa-moon' : 'fa-solid fa-sun'" @click="callEmit"/>
+                    <li id="link-item"><a href="#home">Home</a></li>
+                    <li id="link-item"><a href="#about">About</a></li>
+                    <li id="link-item"><a href="#projects">Projects</a></li>
+                    <li id="link-item"><a href="#contact">Contact</a></li>
+                  <font-awesome-icon id="link-item" class="mobile-icon-link" :class="{ 'hover-dark': darkMode, 'hover-light': !darkMode }" :icon="darkMode ? 'fa-solid fa-moon' : 'fa-solid fa-sun'" @click="callEmit"/>
                 </ul>
 
                 <div class="toggle-btn">
@@ -95,11 +95,45 @@
 
 .nav-wrapper{
     z-index: 2;
-    padding-inline: 20px;
-    padding-bottom: 5px;
     position: fixed;
     width: 100%;
+    /* background: var(--background-color-secondary); */
 }
+
+.navbar {
+    z-index: 2;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 90%;
+    height: 60px;
+    max-width: 1600px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    align-items: baseline;
+}
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links {
+    align-items: center;
+}
+
+.navbar .links #link-item {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.navbar .toggle-btn {
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: none;
+}
+
 .logo {
     height: 40px;
     width: 40px;
@@ -116,34 +150,6 @@ a {
 
 a:hover{
     color: var(--accent-color);
-}
-
-.navbar {
-    z-index: 2;
-    width: 100%;
-    height: 60px;
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.navbar .logo a{
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.navbar .links {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    
-}
-.navbar .toggle-btn {
-    font-size: 1.3rem;
-    cursor: pointer;
-    display: none;
 }
 
 .dropdown-menu {

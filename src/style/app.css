@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 html[theme='light'] {
     --background-color-primary: #FFFFFF;
@@ -33,16 +34,15 @@ html[theme='dark'] {
     --title-color-primary: #CCCCCC;
 } 
 
-
 * {
-    margin: 0;
-    padding: 0;
+    font-size: 1rem;
     color: var(--text-color-primary);
     background: var(--background-color-primary);
+    font-family: "Poppins", sans-serif;
 }
 
 .paragraph-text {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-align: left;
 }
 
@@ -71,4 +71,45 @@ html[theme='dark'] {
     background-size: 100% 100%;
     transform: translateY(-0.15em);
 }
+
+.main-button {
+    padding: 1rem 1.75rem 1rem 1.75rem;
+    width: 100%;
+    border-radius: 7px;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;;
+    font-weight: 700;
+    box-shadow: 0.33em 0.33em 0 0 var(--accent-color), 
+        inset 0 0 0 0 var(--accent-color);
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.1em;
+    margin-top: 0;
+    color: var(--text-color-primary);
+    background-color: var(--background-color-secondary); 
+    border: 1px solid var(--background-color-tertiary); 
+    transition: all 0.3s linear;
+  }
+
+  .main-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -10;
+    transition: all 0.3s linear;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  .main-button:hover:before {
+    transform: scaleX(1);
+  }
+
+  .main-button:hover {
+    box-shadow: none;
+  }
 

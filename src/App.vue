@@ -2,13 +2,11 @@
   <div id="app">
       <Navbar @changeTheme="toggleDarkMode" :darkMode="darkMode" />
     <div class="content-wrapper">
-        <div class="main-content">
-          <Home />
+          <Home :darkMode="darkMode" />
           <About />
           <Projects />
           <Contact />
           <!-- <Footer />  -->
-        </div>
     </div>
   </div>
 </template>
@@ -19,7 +17,7 @@ import Home from "../src/components/Home.vue";
 import About from "../src/components/About.vue";
 import Projects from "../src/components/Projects.vue";
 import Contact from "../src/components/Contact.vue";
-// import Footer from "../src/components/Footer.vue";
+import Footer from "../src/components/Footer.vue";
 import { ref } from "vue";
 
 export default {
@@ -56,9 +54,6 @@ export default {
 <style>
 
 #app {
-  font-family: 'Inter Tight', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
@@ -71,21 +66,22 @@ html {
   padding-top: 80px;
   margin-bottom: 80px;
   width: 100%;
+  /* background: var(--background-color-secondary); */
 }
 
 .main-content {
-  width: 80%;
-  max-width: 1450px;
+  width: 90%;
+  max-width: 1600px;
   margin: 0 auto;
-  border-radius: 25px;
   position: sticky;
 }
 
 .smoothie-container {
-  width: 100%;
-  height: 95vh;
+  width: 90%;
+  max-width: 1600px;
+  height: 90vh;
   padding-top: 80px;
-  padding-inline: 50px;
+  padding-inline: 40px;
   margin: 0 auto;
   overflow: hidden !important;
   color: var(--text-color-primary);
