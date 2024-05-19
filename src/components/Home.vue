@@ -11,13 +11,13 @@
                 {{ "Hello there!" }}
               </div>
 
-              <div class="paragraph-text row p-2 text-left mt-2">
+              <div class="paragraph-text row p-2 text-left mt-2" style="font-size: 1.33rem;">
                 I provide businesses with cutting-edge digital solutions 
                 tailored to their needs, including website design, web development, 
                 web applications, and digital marketing.
               </div>           
               
-              <div class="paragraph-text row p-2 text-left">
+              <div class="paragraph-text row p-2 text-left" style="font-size: 1.33rem;">
                 I am equipped with a solid foundation in computer science 
                 and a hunger for continuous learning and growth in the ever-evolving world of technology.
               </div>

@@ -10,11 +10,11 @@
             
                 <!-- nav -->
                 <ul class="links" v-show="!mobile">
-                    <li id="link-item"><a href="#home">Home</a></li>
-                    <li id="link-item"><a href="#about">About</a></li>
-                    <li id="link-item"><a href="#projects">Projects</a></li>
-                    <li id="link-item"><a href="#contact">Contact</a></li>
-                  <font-awesome-icon id="link-item" class="mobile-icon-link" :class="{ 'hover-dark': darkMode, 'hover-light': !darkMode }" :icon="darkMode ? 'fa-solid fa-moon' : 'fa-solid fa-sun'" @click="callEmit"/>
+                    <li id="link-item"><a href="/#home">Home</a></li>
+                    <li id="link-item"><a href="/#about">About</a></li>
+                    <li id="link-item"><a href="/#projects">Projects</a></li>
+                    <li id="link-item"><a href="/#contact">Contact</a></li>
+                  <font-awesome-icon id="link-item" class="mobile-icon-link" :class="{ 'hover-dark': darkMode, 'hover-light': !darkMode }" :icon="darkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'" @click="callEmit"/>
                 </ul>
 
                 <div class="toggle-btn">
@@ -23,10 +23,10 @@
             </div>
 
             <div class="dropdown-menu open" v-show="mobile_nav">
-                <li class="mobile-link"><a href="#home">Home</a></li>
-                <li class="mobile-link"><a href="#about">About</a></li>
-                <li class="mobile-link"><a href="#projects">Projects</a></li>
-                <li class="mobile-link"><a href="#contact">Contact</a></li>
+                <li class="mobile-link"><a href="/#home">Home</a></li>
+                <li class="mobile-link"><a href="/#about">About</a></li>
+                <li class="mobile-link"><a href="/#projects">Projects</a></li>
+                <li class="mobile-link"><a href="/#contact">Contact</a></li>
                 <li class="mobile-link"><font-awesome-icon class="mobile-icon-link" :class="darkMode ? 'hover-dark' : 'hover-light'" :icon="darkMode ? 'fa-solid fa-moon' : 'fa-solid fa-sun'" @click="callEmit"/></li>
 
             </div>
@@ -37,10 +37,11 @@
 <script>
 
  import { ref, onMounted, onUnmounted, watch } from 'vue';
+ import { useStore } from "vuex";
 
  export default {
-    emits: ['changeTheme'],
     props: ['darkMode'],
+    emits: ['changeTheme'],
     setup(props, { emit }){
         onMounted(() => window.addEventListener('resize', onWidthChange))
         onUnmounted(() => window.removeEventListener('resize', onWidthChange))
@@ -49,6 +50,7 @@
         const mobile_nav = ref(false);
         const window_width = ref(window.innerWidth);
         const nav_open = ref(false);
+        const store = useStore();
 
         const onWidthChange = () => {
             window_width.value = window.innerWidth;
@@ -69,9 +71,10 @@
             }
         }
 
-        function callEmit(){
-            emit('changeTheme')
-        }
+      function callEmit(){
+        emit('changeTheme')
+      }
+
 
         watchWidth();
 
@@ -84,8 +87,8 @@
         mobile,
         mobile_nav,
         toggleNavbar,
+      callEmit,
         nav_open,
-        callEmit,
     }
 }
  }

@@ -2,53 +2,38 @@
   <div id="app">
       <Navbar @changeTheme="toggleDarkMode" :darkMode="darkMode" />
     <div class="content-wrapper">
-          <Home :darkMode="darkMode" />
-          <About />
-          <Projects />
-          <Contact />
-          <!-- <Footer />  -->
+      <Main :darkMode="darkMode" />
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
 import Navbar from "../src/components/Navbar.vue";
-import Home from "../src/components/Home.vue";
-import About from "../src/components/About.vue";
-import Projects from "../src/components/Projects.vue";
-import Contact from "../src/components/Contact.vue";
-import Footer from "../src/components/Footer.vue";
-import { ref } from "vue";
+import Main from "../src/components/Main.vue";
 
-export default {
-  name: "App",
-  components: {Navbar, Home, About, Projects, Contact},
-  mounted() {
+import {onMounted, ref} from "vue";
+import {useStore} from "vuex";
+
+onMounted(() => {
   const darkModeVar = localStorage.getItem('darkMode');
-  this.darkMode = darkModeVar === 'true' ? true : false;
-  this.applyTheme();
-},
-  setup() {
-    const darkMode = ref(false);
+  darkMode.value = darkModeVar === 'true' ? true : false;
+  applyTheme();
+});
 
-    const toggleDarkMode = () => {
-      darkMode.value = !darkMode.value;
-      localStorage.setItem('darkMode', darkMode.value ? true : false);
-      applyTheme();
-    };
+const store = useStore();
+const darkMode = ref(false);
 
-    const applyTheme = () => {
-      const theme = darkMode.value ? 'dark' : 'light';
-      document.documentElement.setAttribute('theme', theme);
-    }
+const toggleDarkMode = () => {
+  darkMode.value = !darkMode.value;
+  store.commit("applyTheme", darkMode.value);
+  applyTheme();
+};
 
-    return {
-      darkMode,
-      toggleDarkMode,
-      applyTheme,
-    }
-  }   
+const applyTheme = () => {
+  const theme = darkMode.value ? 'dark' : 'light'
+  document.documentElement.setAttribute('theme', theme);
 }
+
 </script>
 
 <style>
@@ -79,7 +64,7 @@ html {
 .smoothie-container {
   width: 90%;
   max-width: 1600px;
-  height: 90vh;
+  height: 100vh;
   padding-top: 80px;
   padding-inline: 40px;
   margin: 0 auto;
