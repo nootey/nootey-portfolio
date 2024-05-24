@@ -70,7 +70,7 @@
     </div>
 
   </Smoothie>
-  
+
   </template>
     
   <script>
@@ -120,7 +120,7 @@ form {
       }
 
       &:focus {
-        border: 1px solid var(--accent-grad-1);
+        border: 1px solid var(--accent-color);
         box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
       }
     }

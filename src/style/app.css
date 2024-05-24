@@ -7,10 +7,6 @@ html[theme='light'] {
     --background-color-secondary: #f5f5f5;
     --background-color-tertiary: #E3E3E3;
     --accent-color: #248EFF;
-    --accent-grad-1: #86C1FF;
-    --accent-grad-2: #5DACFF;
-    --accent-grad-3: #44A0FF;
-    --accent-grad-4: #0780FE;
     --border-color: #DEE2E6;
     --text-color-primary: #222;
     --text-color-secondary: #4A4949;
@@ -22,11 +18,7 @@ html[theme='dark'] {
     --background-color-primary: #222222;
     --background-color-secondary: #2B2B2B;
     --background-color-tertiary: #1E1E1E;
-    --accent-color: #9014FF;
-    --accent-grad-1: #D19FFE;
-    --accent-grad-2: #BA6DFF;
-    --accent-grad-3: #A43FFF;
-    --accent-grad-4: #8600FF;
+    --accent-color: #F6C216;
     --border-color: #555555;
     --text-color-primary: #FFFFFF;
     --text-color-secondary: #BEBEBE;

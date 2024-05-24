@@ -4,6 +4,7 @@
     <div class="content-wrapper">
       <Main :darkMode="darkMode" />
     </div>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import Main from "../src/components/Main.vue";
 
 import {onMounted, ref} from "vue";
 import {useStore} from "vuex";
+import Footer from "@/components/Footer.vue";
 
 onMounted(() => {
   const darkModeVar = localStorage.getItem('darkMode');
@@ -39,6 +41,9 @@ const applyTheme = () => {
 <style>
 
 #app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   text-align: center;
   color: #2c3e50;
 }
@@ -48,6 +53,7 @@ html {
 }
 
 .content-wrapper {
+  flex: 1;
   padding-top: 80px;
   margin-bottom: 80px;
   width: 100%;
