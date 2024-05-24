@@ -3,28 +3,30 @@
 
       <div class="col p-2 mt-4">
 
-        <div class="row w-100 align-items-center justify-content-center gap-3">
+        <div id="main-row" class="row w-100 align-items-center justify-content-center gap-3">
 
-            <div class="col w-50">
+            <div id="col-text" class="main-col col w-50 gap-1">
 
-              <div class="typed-out" style="margin-left: 0; padding: 0.25rem 0 0.25rem 0.5rem">
-                {{ "Hello there!" }}
+              <div class="typed-container">
+                <div class="typed-out">
+                  {{ "Hello there!" }}
+                </div>
               </div>
 
-              <div class="paragraph-text row p-2 text-left mt-2" style="font-size: 1.33rem;">
+              <div class="paragraph-text row p-2" style="font-size: 1.15rem;">
                 I provide businesses with cutting-edge digital solutions 
                 tailored to their needs, including website design, web development, 
                 web applications, and digital marketing.
               </div>           
               
-              <div class="paragraph-text row p-2 text-left" style="font-size: 1.33rem;">
+              <div class="paragraph-text row p-2" style="font-size: 1.15rem;">
                 I am equipped with a solid foundation in computer science 
                 and a hunger for continuous learning and growth in the ever-evolving world of technology.
               </div>
 
             </div>     
             
-            <div class="col w-50">
+            <div id="image-col" class="main-col col w-50">
               <img src="@/assets/images/welcomepage_placeholder.svg" alt="Welcome placeholder"
               style="width: 100%; height: auto;">
             </div>
@@ -33,22 +35,19 @@
 
         <div class="row w-100 gap-3 mt-5">
 
-          <div class="paragraph-text row p-2 mt-4">
-          
-            <div class="col col-auto min-width-col">
+          <div class="main-col col col-auto min-width-col">
             <a href="#projects">
               <button class="main-button" tabIndex="-1">Projects</button>
             </a>
-            </div>
+          </div>
 
-          <div class="col col-auto min-width-col">
+          <div class="main-col col col-auto min-width-col">
             <a href="#contact">
               <button class="main-button" tabIndex="-1">Contact</button>
             </a>
           </div>
-        </div>
 
-        <div class="row mx-auto text-center justify-content-center p-3 mt-5">
+          <div class="row mx-auto text-center justify-content-center p-3 mt-5">
           <a class="arrow bounce col col-auto min-width-col" href="#about">
             <img v-if="darkMode" src="@/assets/images/arrow-light.png"
                  width="50"/>
@@ -81,19 +80,23 @@ export default {
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.typed-container {
+  display: flex;
+  //max-width: min-content;
+}
+
 .typed-out {
   font-family: 'Source Code Pro', monospace;
   font-size: 3rem;
   font-weight: 1000;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid var(--accent-color); /* The typwriter cursor */
+  border-right: .15em solid var(--accent-color); /* The typewriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .1em; /* Adjust as needed */
   max-width: min-content;
-  animation: 
-    typing 3s steps(20, end) forwards,
-    blink .8s infinite;
+  animation:
+      typing 3s steps(20, end) forwards,
+      blink .8s infinite;
 }
 
 /* The typing effect */
@@ -127,6 +130,33 @@ export default {
   }
   60% {
     transform: translateY(-10px);
+  }
+}
+
+@media only screen and (max-width: 1110px) {
+  .typed-out{
+    font-size: 2.5em;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .typed-out{
+    font-size: 2em;
+  }
+  .typed-container{
+    justify-content: center;
+    align-items: center;
+    max-width: 100%
+  }
+  #main-row {
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+  .main-col {
+    width: 100% !important;
+  }
+  .paragraph-text{
+    font-size: 1rem !important;
   }
 }
 

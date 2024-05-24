@@ -24,7 +24,19 @@ html[theme='dark'] {
     --text-color-secondary: #BEBEBE;
     --text-color-tertiary: #808080;
     --title-color-primary: #CCCCCC;
-} 
+}
+
+.smoothie-container {
+    width: 90%;
+    max-width: 1600px;
+    height: 100vh;
+    padding-top: 80px;
+    padding-inline: 40px;
+    margin: 0 auto;
+    overflow: hidden !important;
+    color: var(--text-color-primary);
+    background: var(--background-color-primary);
+}
 
 * {
     font-size: 1.15rem;
@@ -87,43 +99,66 @@ html[theme='dark'] {
 }
 
 .main-button {
-    padding: 1rem 1.75rem 1rem 1.75rem;
-    width: 100%;
-    border-radius: 7px;
-    position: relative;
-    text-transform: uppercase;
-    text-decoration: none;;
-    font-weight: 700;
-    box-shadow: 0.33em 0.33em 0 0 var(--accent-color), 
-        inset 0 0 0 0 var(--accent-color);
-    font-size: 0.9rem;
-    line-height: 1.25rem;
-    letter-spacing: 0.1em;
-    margin-top: 0;
-    color: var(--text-color-primary);
-    background-color: var(--background-color-secondary); 
-    border: 1px solid var(--background-color-tertiary); 
-    transition: all 0.3s linear;
-  }
+padding: 1rem 1.75rem 1rem 1.75rem;
+width: 100%;
+border-radius: 7px;
+position: relative;
+text-transform: uppercase;
+text-decoration: none;;
+font-weight: 700;
+box-shadow: 0.33em 0.33em 0 0 var(--accent-color),
+    inset 0 0 0 0 var(--accent-color);
+font-size: 0.9rem;
+line-height: 1.25rem;
+letter-spacing: 0.1em;
+margin-top: 0;
+color: var(--text-color-primary);
+background-color: var(--background-color-secondary);
+border: 1px solid var(--background-color-tertiary);
+transition: all 0.3s linear;
+}
 
-  .main-button:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -10;
-    transition: all 0.3s linear;
-    transform: scaleX(0);
-    transform-origin: left;
-  }
+.main-button:before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+z-index: -10;
+transition: all 0.3s linear;
+transform: scaleX(0);
+transform-origin: left;
+}
 
-  .main-button:hover:before {
-    transform: scaleX(1);
-  }
+.main-button:hover:before {
+transform: scaleX(1);
+}
 
-  .main-button:hover {
-    box-shadow: none;
-  }
+.main-button:hover {
+box-shadow: none;
+}
+
+@media only screen and (max-width: 1360px) {
+    * {
+        font-size: 0.92rem;
+    }
+}
+
+
+@media only screen and (max-width: 800px) {
+    .smoothie-container {
+        width: 95%;
+        padding-top: 20px;
+        margin-top: 0;
+    }
+    .paragraph-text{
+        text-align: center;
+        font-size: 0.85rem;
+    }
+    .content-wrapper{
+        padding-top: 30px;
+    }
+}
+
 

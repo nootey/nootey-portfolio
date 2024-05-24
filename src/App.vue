@@ -55,7 +55,7 @@ html {
 .content-wrapper {
   flex: 1;
   padding-top: 80px;
-  margin-bottom: 80px;
+  //margin-bottom: 80px;
   width: 100%;
   /* background: var(--background-color-secondary); */
 }
@@ -67,17 +67,7 @@ html {
   position: sticky;
 }
 
-.smoothie-container {
-  width: 90%;
-  max-width: 1600px;
-  height: 100vh;
-  padding-top: 80px;
-  padding-inline: 40px;
-  margin: 0 auto;
-  overflow: hidden !important;
-  color: var(--text-color-primary);
-  background: var(--background-color-primary);
-}
+
 
 .title {
   font-size: 1.4rem;
