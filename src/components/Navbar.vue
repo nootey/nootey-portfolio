@@ -207,16 +207,51 @@ a:hover{
 }
 
 @media(max-width: 992px){
-    .navbar .links{
-        display: none;
-    }
-    .navbar .toggle-btn{
-        display: block;
-    }
+  a{
+    background: none;
+  }
+  .navbar .links{
 
-    .dropdown-menu {
-        display: block;
-    }
+    display: none;
+  }
+  .navbar .toggle-btn{
+      display: block;
+  }
+
+  .dropdown-menu {
+      display: block;
+  }
+
+
+  li {
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+  }
+
+  li:before, li:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+    position: absolute;
+    bottom: 0;
+  }
+
+  li:before {
+    left: 0;
+  }
+
+  li:after {
+    right: 0;
+  }
+
+  li:hover:before, li:hover:after {
+    width: 20px;
+    background: var(--accent-color);
+  }
 }
 
 a{
@@ -246,6 +281,14 @@ li:after {
 li:hover:after {
   width: 100%;
   background: var(--accent-color);
+}
+
+@media only screen and (max-width: 850px) {
+  .navbar{
+    height: 35px;
+    width: 99%;
+    margin-bottom: 0;
+  }
 }
 
 </style>
