@@ -2,13 +2,13 @@
   <Smoothie id="about" :weight="0.03" class="smoothie-container mt-3" style="border-left: 1px solid var(--text-color-primary); border-right: 1px solid var(--text-color-primary);">
     <div class="col p-5 gap-5">
 
-      <div class="row w-100 align-items-center justify-content-center gap-2 mb-5">
+      <div id="main-row" class="row w-100 align-items-center justify-content-center gap-2 mb-5">
       
-      <div class="col w-50">
+      <div class="main-col col w-50">
         <img src="@/assets/images/coding.png" style="width: 100%; height: auto;"/>
       </div>
 
-      <div class="col w-50">
+      <div class="main-col col w-50">
         <animated-component>
           <div class="title">About me</div>
         </animated-component>
@@ -28,7 +28,7 @@
 
     </div>
 
-      <div class="row w-100 justify-content-center align-items-center mt-5">
+      <div id="main-row" class="row w-100 justify-content-center align-items-center mt-5">
 
         <animated-component>
           <div id="slide-in-right" class="row align-items-center mt-5">
@@ -186,5 +186,25 @@
     }
   }
 
+  @media only screen and (max-width: 800px) {
+    .typed-out{
+      font-size: 2em;
+    }
+    .typed-container{
+      justify-content: center;
+      align-items: center;
+      max-width: 100%
+    }
+    #main-row {
+      flex-direction: column-reverse;
+      flex-wrap: wrap;
+    }
+    .main-col {
+      width: 100% !important;
+    }
+    .paragraph-text{
+      font-size: 1rem !important;
+    }
+  }
 
 </style>
