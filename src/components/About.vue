@@ -1,10 +1,10 @@
 <template>
-  <Smoothie id="about" :weight="0.03" class="smoothie-container mt-3" style="border-left: 1px solid var(--text-color-primary); border-right: 1px solid var(--text-color-primary);">
-    <div class="col p-5 gap-5">
+  <Smoothie id="about" :weight="0.03" class="smoothie-container" style="border-left: 1px solid var(--text-color-primary); border-right: 1px solid var(--text-color-primary);">
+    <div id="container" class="col">
 
       <div id="main-row" class="row w-100 align-items-center justify-content-center gap-2 mb-5">
       
-      <div class="main-col col w-50">
+      <div id="hideOnMobile" class="main-col col w-50">
         <img src="@/assets/images/coding.png" style="width: 100%; height: auto;"/>
       </div>
 
@@ -33,11 +33,9 @@
         <animated-component>
           <div id="slide-in-right" class="row align-items-center mt-5">
 
-            <!--          <div class="col"><hr/></div>-->
-
             <div class="col">
 
-              <div class="icon-display row mx-auto text-center justify-content-center p-3">
+              <div class="icon-display row text-center justify-content-center p-3">
 
                 <div class="col col-auto min-width-col">
                   <a title="Github" href="https://github.com/nootey" target="_blank" rel="noopener noreferrer">
@@ -64,19 +62,17 @@
 
             </div>
 
-            <div class="col"><hr/></div>
+            <div id="hideOnMobile" class="col"><hr/></div>
 
           </div>
         </animated-component>
 
-
-
         <animated-component>
           <div id="slide-in-left" class="row align-items-center mt-5">
 
-          <div class="col"><hr/></div>
+          <div  class="col justify-content-center"><hr/></div>
 
-          <div class="col">
+          <div id="hideOnMobile" class="col">
 
             <div class="icon-display row mx-auto text-center justify-content-center gap-1 p-1">
               <div class="col col-auto min-width-col">
@@ -96,8 +92,6 @@
             </div>
 
           </div>
-
-<!--          <div class="col"><hr/></div>-->
 
         </div>
         </animated-component>
@@ -187,17 +181,23 @@
   }
 
   @media only screen and (max-width: 800px) {
-    .typed-out{
-      font-size: 2em;
-    }
-    .typed-container{
-      justify-content: center;
-      align-items: center;
-      max-width: 100%
+    #hideOnMobile{
+      display: none;
     }
     #main-row {
       flex-direction: column-reverse;
       flex-wrap: wrap;
+    }
+    .icon-display{
+      transform: scale(0.8);
+      padding: 0 !important;
+    }
+    #slide-in-left{
+      margin-top: 0 !important;
+      width: 100%;
+    }
+    #slide-in-right{
+      margin-top: 0 !important;
     }
     .main-col {
       width: 100% !important;
