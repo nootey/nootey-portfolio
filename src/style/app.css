@@ -9,7 +9,7 @@ html[theme='light'] {
     --accent-color: #248EFF;
     --border-color: #DEE2E6;
     --text-color-primary: #222;
-    --text-color-secondary: #4A4949;
+    --text-color-secondary: #524C4C;
     --text-color-tertiary: #9B9B9B;
     --title-color-primary: #3A4653;
 }
@@ -30,15 +30,12 @@ html[theme='dark'] {
     width: 90%;
     max-width: 1600px;
     height: 100vh;
-    padding-top: 80px;
-    padding-inline: 40px;
-    margin: 0 auto;
+    padding-top: 100px;
     overflow: hidden !important;
     color: var(--text-color-primary);
     background: var(--background-color-primary);
-    justify-content: center;
-    align-items: center;
     align-content: center;
+    gap: 10px;
 }
 
 * {
@@ -49,8 +46,10 @@ html[theme='dark'] {
 }
 
 .paragraph-text {
+    color: var(--text-color-secondary);
     font-size: 1rem;
     text-align: left;
+    font-weight: 300;
 }
 
 .title:before{
@@ -151,13 +150,13 @@ box-shadow: none;
 
 @media only screen and (max-width: 800px) {
     .smoothie-container {
-        width: 95%;
+        width: 92%;
         padding-top: 20px;
         margin-top: 0;
     }
     .paragraph-text{
         text-align: center;
-        font-size: 0.85rem;
+        /*font-size: 1rem;*/
     }
     .content-wrapper{
         padding-top: 30px;

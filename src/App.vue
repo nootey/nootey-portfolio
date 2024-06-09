@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-      <Navbar @changeTheme="toggleDarkMode" :darkMode="darkMode" />
-    <div class="content-wrapper">
-      <Main :darkMode="darkMode" />
-    </div>
+    <Navbar @changeTheme="toggleDarkMode" :darkMode="darkMode" />
+<!--    <div class="content-wrapper">-->
+<!--      <Main :darkMode="darkMode" />-->
+<!--    </div>-->
+    <Main :darkMode="darkMode" />
     <Footer></Footer>
   </div>
 </template>
@@ -46,6 +47,9 @@ const applyTheme = () => {
   min-height: 100vh;
   text-align: center;
   color: #2c3e50;
+  //justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 html {
