@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-      <div style="font-size: 1rem;" class="align-items-center;">
+      <div style="font-size: 1rem; background: #262323; color: var(--background-color-primary);" class="align-items-center;">
         Copyright © {{ currentYear }} | Bure web designs | All Rights Reserved
       </div>
   </footer>
