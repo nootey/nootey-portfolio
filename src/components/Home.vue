@@ -1,5 +1,5 @@
 <template>
-  <Smoothie id="home" :weight="0.03" class="smoothie-container" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+  <Smoothie id="home" :weight="0.03" class="smoothie-container" style="padding-top: 100px; border-top-left-radius: 20px; border-top-right-radius: 20px;">
 
     <div id="main-row" class="row w-100 align-items-center justify-content-center gap-3">
 
@@ -123,6 +123,9 @@ export default {
 }
 
 @media only screen and (max-width: 800px) {
+  .smoothie-container{
+    padding-top: 50px !important;
+  }
   .typed-out {
     font-size: 2em;
   }
@@ -134,7 +137,6 @@ export default {
   #main-row {
     flex-direction: column-reverse;
     flex-wrap: wrap;
-    margin-top: 40px;
   }
   .main-col {
     width: 100% !important;

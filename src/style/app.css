@@ -30,7 +30,7 @@ html[theme='dark'] {
     width: 90%;
     max-width: 1600px;
     height: 100vh;
-    padding-top: 100px;
+    /*padding-top: 100px;*/
     overflow: hidden !important;
     color: var(--text-color-primary);
     background: var(--background-color-primary);
