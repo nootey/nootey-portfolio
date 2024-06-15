@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-      <div style="font-size: 1rem; background: #262323; color: var(--background-color-primary);" class="align-items-center;">
+      <div style="font-size: 1rem; background: var(--footer-color); color: white;" class="align-items-center;">
         Copyright © {{ currentYear }} | Bure web designs | All Rights Reserved
       </div>
   </footer>
@@ -18,7 +18,8 @@ const currentYear = moment().year();
 .footer {
   border-top: 20px solid var(--accent-color);
   margin-top: -140px;
-  background: #262323;
+  background: var(--footer-color);
+  color: var(--text-color-primary);
   align-content: center;
   align-items: center;
   justify-content: center;

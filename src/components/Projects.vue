@@ -10,12 +10,12 @@
             <div class="title">Projects</div>
           </animated-component>
 
-          <div class="paragraph-text row p-2 text-left">
+          <div class="paragraph-text row p-4 text-left">
             These are some of my projects. It's a mix of my regular work, projects for clients and some demo projects.
             SEO performance and optimization are my number one priorities, regardless of the job.
           </div>
 
-          <div class="paragraph-text row p-2 text-left">
+          <div class="paragraph-text row p-4 text-left">
             Regardless of the complexity of the project, I bring my best and put your needs at the forefront. Click the button
             bellow to view some of my projects.
           </div>
@@ -24,7 +24,7 @@
 
             <div class="col">
               <a href="/projects">
-                <button class="main-button" tabIndex="-1">Projects</button>
+                <button class="main-button" tabIndex="-1" style="width: 50%;">Projects</button>
               </a>
             </div>
           </div>

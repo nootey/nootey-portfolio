@@ -1,11 +1,9 @@
 <template>
   <Smoothie id="about" :weight="0.03" class="smoothie-container" style="border-left: 1px solid var(--text-color-primary); border-right: 1px solid var(--text-color-primary);">
-    <div id="container" class="col">
+    <div id="main-row" style="width: 99%; margin: auto;" class="row w-100 align-items-center justify-content-center mb-5">
 
-      <div id="main-row" class="row w-100 align-items-center justify-content-center gap-2 mb-5">
-      
-      <div class="main-col col w-50">
-        <img id="mainImg" src="@/assets/images/coding.png" style="width: 100%; height: auto;"/>
+      <div class="main-col col w-50" >
+        <img id="mainImg" src="@/assets/images/close-up-laptop.jpg" style="width: 100%; height: auto; border-radius: 12px;"/>
       </div>
 
       <div class="main-col col w-50">
@@ -17,7 +15,7 @@
           I work full-time as a software engineer and part time as a freelancer offering various services. I'm based in Ljubljana, Slovenia.
           I'm passionate about software development, but my hobbies extend to artificial intelligence, fitness, crypto, finance and cars.
         </div>
-      
+
         <div class="paragraph-text flex flex-row p-3 text-left">
           I create state-of-the-art digital solutions with a focus on your needs. Examples are: business websites, e-commerce,
           administrative applications, CRMs and more.
@@ -27,47 +25,47 @@
 
     </div>
 
-      <div id="main-row" class="row w-100 justify-content-center align-items-center mt-5">
+    <div id="main-row" style="width: 99%; margin: auto;" class="row w-100 justify-content-center align-items-center mt-5">
 
-        <animated-component>
-          <div id="slide-in-right" class="row align-items-center mt-5">
+      <animated-component>
+        <div id="slide-in-right" class="row align-items-center mt-5">
 
-            <div class="col">
+          <div class="col">
 
-              <div class="icon-display row mx-auto text-center justify-content-center gap-1 p-1">
+            <div class="icon-display row mx-auto text-center justify-content-center gap-1 p-1">
 
-                <div class="col col-auto min-width-col">
-                  <a title="Github" href="https://github.com/nootey" target="_blank" rel="noopener noreferrer">
-                    <svg id="spinImg" height="50" width="50" viewBox="0 -3.1 2490.3 2493" xmlns="http://www.w3.org/2000/svg"><ellipse cx="1245.2" cy="1243.4" :fill="darkMode ? '#3D3D3D' : 'white'" rx="1217.6" ry="1246.5"/><path d="m1245.2 1.6c-687.6 0-1245.2 557.4-1245.2 1245.1 0 550.2 356.8 1016.9 851.5 1181.5 62.2 11.5 85.1-27 85.1-59.9 0-29.7-1.2-127.8-1.7-231.8-346.4 75.3-419.5-146.9-419.5-146.9-56.6-143.9-138.3-182.2-138.3-182.2-113-77.3 8.5-75.7 8.5-75.7 125 8.8 190.9 128.3 190.9 128.3 111.1 190.4 291.3 135.3 362.3 103.5 11.2-80.5 43.4-135.4 79.1-166.5-276.6-31.5-567.3-138.3-567.3-615.4 0-135.9 48.6-247 128.3-334.2-12.9-31.3-55.5-157.9 12.1-329.4 0 0 104.6-33.5 342.5 127.6 99.3-27.6 205.8-41.4 311.7-41.9 105.8.5 212.4 14.3 311.9 41.9 237.7-161.1 342.1-127.6 342.1-127.6 67.8 171.5 25.1 298.2 12.2 329.5 79.8 87.2 128.1 198.3 128.1 334.2 0 478.2-291.3 583.6-568.6 614.4 44.7 38.6 84.5 114.4 84.5 230.6 0 166.6-1.4 300.7-1.4 341.7 0 33.1 22.4 72 85.5 59.7 494.5-164.8 850.8-631.4 850.8-1181.4 0-687.7-557.5-1245.1-1245.1-1245.1" :fill="darkMode ? 'white' : '#3D3D3D'"/></svg>
-                  </a>
-                </div>
-                <div class="col col-auto min-width-col" >
-                  <a title="Linkedin" href="https://www.linkedin.com/in/jurebovha/" target="_blank" rel="noopener noreferrer">
-                    <svg id="spinImg" height="50" width="50" xmlns="http://www.w3.org/2000/svg" viewBox="7.025 7.025 497.951 497.95"><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="-974.482" y1="1306.773" x2="-622.378" y2="1658.877" gradientTransform="translate(1054.43 -1226.825)"><stop offset="0" stop-color="#2489be"/><stop offset="1" stop-color="#0575b3"/></linearGradient><path d="M256 7.025C118.494 7.025 7.025 118.494 7.025 256S118.494 504.975 256 504.975 504.976 393.506 504.976 256C504.975 118.494 393.504 7.025 256 7.025zm-66.427 369.343h-54.665V199.761h54.665v176.607zM161.98 176.633c-17.853 0-32.326-14.591-32.326-32.587 0-17.998 14.475-32.588 32.326-32.588s32.324 14.59 32.324 32.588c.001 17.997-14.472 32.587-32.324 32.587zm232.45 199.735h-54.4v-92.704c0-25.426-9.658-39.619-29.763-39.619-21.881 0-33.312 14.782-33.312 39.619v92.704h-52.43V199.761h52.43v23.786s15.771-29.173 53.219-29.173c37.449 0 64.257 22.866 64.257 70.169l-.001 111.825z" :fill="darkMode ? 'white' : '#3D3D3D'"/></svg>
-                  </a>
-                </div>
-                <div class="col col-auto min-width-col">
-                  <a title="email" href="mailto:poiskusni@gmail.me">
-                    <svg id="spinImg" height="50" width="50" xmlns="http://www.w3.org/2000/svg" viewBox="1 1 600 600"><g transform="matrix(6.66667 0 0 6.66667 -5.667 -6408.081)"><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="-110.934" y1="1129.751" x2="-110.35" y2="1720.099" gradientTransform="matrix(1 0 0 -1 156.89 2180.75)"><stop offset="0" stop-color="#70efff"/><stop offset="1" stop-color="#5770ff"/></linearGradient><path d="M21.653 961.362h48.695a20.608 20.608 0 0 1 20.653 20.653v48.695a20.608 20.608 0 0 1-20.653 20.653H21.653A20.608 20.608 0 0 1 1 1030.71v-48.695a20.608 20.608 0 0 1 20.653-20.653z" :fill="darkMode ? 'white' : '#3D3D3D'"/><path d="M20.719 986.956c-.474 0-.921.082-1.344.25l8.469 8.719 8.563 8.875.156.188.25.25.25.25.5.531 7.344 7.531c.122.076.477.404.754.543.357.178.743.343 1.141.357.43.015.869-.108 1.256-.296.29-.141.419-.343.755-.603l8.5-8.781 8.594-8.844 8.281-8.531a3.635 3.635 0 0 0-1.75-.438H20.719zm-2.594 1.062c-.903.856-1.469 2.142-1.469 3.594v28.625c0 1.175.377 2.243 1 3.062l1.187-1.125 8.844-8.594 7.844-7.594-.156-.187-8.594-8.844-8.594-8.875-.062-.062zm57.188.282l-8.375 8.656-8.563 8.844-.156.156 8.156 7.906 8.844 8.594.531.5c.476-.764.75-1.705.75-2.719v-28.625c0-1.294-.448-2.468-1.187-3.312zm-38.782 18.718l-7.812 7.594-8.875 8.594-1.125 1.094c.593.382 1.268.625 2 .625h51.719c.88 0 1.678-.338 2.344-.875l-.562-.562-8.875-8.594-8.156-7.875-7.344 7.562c-.397.264-.663.556-1.051.735-.625.289-1.309.533-1.997.523-.69-.011-1.367-.281-1.986-.585-.311-.153-.477-.305-.841-.61l-7.439-7.626z" :fill="!darkMode ? 'white' : '#3D3D3D'"/></g></svg>
-                  </a>
-                </div>
-                <div class="col col-auto min-width-col">
-                  <a title="Linktree" href="https://linktr.ee/jurebovha" target="_blank" rel="noopener noreferrer">
-                    <svg id="spinImg" height="50" width="50"  viewBox="-7.19 -5.39 814.38 679.39" xmlns="http://www.w3.org/2000/svg"><path d="m297.53 18.87c-13.49-24.26-48.54-24.26-62.02 0l-231.91 420.58c-10.79 21.57 5.39 45.83 29.66 45.83h156.4v159.06c0 16.18 13.49 29.66 29.67 29.66h91.68c16.18 0 29.66-13.48 29.66-29.66v-159.06h-43.14c-18.88 0-32.36-13.48-35.06-29.66 0-5.39 0-10.78 2.7-16.23l129.44-234.55z" :fill="darkMode ? '#D8D8D8' : '#5C5C5C'"/><path d="m502.47 18.87c13.49-24.26 48.54-24.26 62.02 0l231.91 420.58c10.79 21.57-5.39 45.83-29.66 45.83h-153.71v159.06c0 16.18-13.48 29.66-29.69 29.66h-97.05c-16.18 0-29.66-13.48-29.66-29.66v-159.06h43.15c18.87 0 32.35-13.48 35.05-29.66 0-5.39 0-10.78-2.7-16.23l-129.43-234.49z" :fill="darkMode ? 'white' : '#3D3D3D'"/></svg>
-                  </a>
-                </div>
-
+              <div class="col col-auto min-width-col">
+                <a title="Github" href="https://github.com/nootey" target="_blank" rel="noopener noreferrer">
+                  <svg id="spinImg" height="50" width="50" viewBox="0 -3.1 2490.3 2493" xmlns="http://www.w3.org/2000/svg"><ellipse cx="1245.2" cy="1243.4" :fill="darkMode ? '#3D3D3D' : 'white'" rx="1217.6" ry="1246.5"/><path d="m1245.2 1.6c-687.6 0-1245.2 557.4-1245.2 1245.1 0 550.2 356.8 1016.9 851.5 1181.5 62.2 11.5 85.1-27 85.1-59.9 0-29.7-1.2-127.8-1.7-231.8-346.4 75.3-419.5-146.9-419.5-146.9-56.6-143.9-138.3-182.2-138.3-182.2-113-77.3 8.5-75.7 8.5-75.7 125 8.8 190.9 128.3 190.9 128.3 111.1 190.4 291.3 135.3 362.3 103.5 11.2-80.5 43.4-135.4 79.1-166.5-276.6-31.5-567.3-138.3-567.3-615.4 0-135.9 48.6-247 128.3-334.2-12.9-31.3-55.5-157.9 12.1-329.4 0 0 104.6-33.5 342.5 127.6 99.3-27.6 205.8-41.4 311.7-41.9 105.8.5 212.4 14.3 311.9 41.9 237.7-161.1 342.1-127.6 342.1-127.6 67.8 171.5 25.1 298.2 12.2 329.5 79.8 87.2 128.1 198.3 128.1 334.2 0 478.2-291.3 583.6-568.6 614.4 44.7 38.6 84.5 114.4 84.5 230.6 0 166.6-1.4 300.7-1.4 341.7 0 33.1 22.4 72 85.5 59.7 494.5-164.8 850.8-631.4 850.8-1181.4 0-687.7-557.5-1245.1-1245.1-1245.1" :fill="darkMode ? 'white' : '#3D3D3D'"/></svg>
+                </a>
+              </div>
+              <div class="col col-auto min-width-col" >
+                <a title="Linkedin" href="https://www.linkedin.com/in/jurebovha/" target="_blank" rel="noopener noreferrer">
+                  <svg id="spinImg" height="50" width="50" xmlns="http://www.w3.org/2000/svg" viewBox="7.025 7.025 497.951 497.95"><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="-974.482" y1="1306.773" x2="-622.378" y2="1658.877" gradientTransform="translate(1054.43 -1226.825)"><stop offset="0" stop-color="#2489be"/><stop offset="1" stop-color="#0575b3"/></linearGradient><path d="M256 7.025C118.494 7.025 7.025 118.494 7.025 256S118.494 504.975 256 504.975 504.976 393.506 504.976 256C504.975 118.494 393.504 7.025 256 7.025zm-66.427 369.343h-54.665V199.761h54.665v176.607zM161.98 176.633c-17.853 0-32.326-14.591-32.326-32.587 0-17.998 14.475-32.588 32.326-32.588s32.324 14.59 32.324 32.588c.001 17.997-14.472 32.587-32.324 32.587zm232.45 199.735h-54.4v-92.704c0-25.426-9.658-39.619-29.763-39.619-21.881 0-33.312 14.782-33.312 39.619v92.704h-52.43V199.761h52.43v23.786s15.771-29.173 53.219-29.173c37.449 0 64.257 22.866 64.257 70.169l-.001 111.825z" :fill="darkMode ? 'white' : '#3D3D3D'"/></svg>
+                </a>
+              </div>
+              <div class="col col-auto min-width-col">
+                <a title="email" href="mailto:poiskusni@gmail.me">
+                  <svg id="spinImg" height="50" width="50" xmlns="http://www.w3.org/2000/svg" viewBox="1 1 600 600"><g transform="matrix(6.66667 0 0 6.66667 -5.667 -6408.081)"><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="-110.934" y1="1129.751" x2="-110.35" y2="1720.099" gradientTransform="matrix(1 0 0 -1 156.89 2180.75)"><stop offset="0" stop-color="#70efff"/><stop offset="1" stop-color="#5770ff"/></linearGradient><path d="M21.653 961.362h48.695a20.608 20.608 0 0 1 20.653 20.653v48.695a20.608 20.608 0 0 1-20.653 20.653H21.653A20.608 20.608 0 0 1 1 1030.71v-48.695a20.608 20.608 0 0 1 20.653-20.653z" :fill="darkMode ? 'white' : '#3D3D3D'"/><path d="M20.719 986.956c-.474 0-.921.082-1.344.25l8.469 8.719 8.563 8.875.156.188.25.25.25.25.5.531 7.344 7.531c.122.076.477.404.754.543.357.178.743.343 1.141.357.43.015.869-.108 1.256-.296.29-.141.419-.343.755-.603l8.5-8.781 8.594-8.844 8.281-8.531a3.635 3.635 0 0 0-1.75-.438H20.719zm-2.594 1.062c-.903.856-1.469 2.142-1.469 3.594v28.625c0 1.175.377 2.243 1 3.062l1.187-1.125 8.844-8.594 7.844-7.594-.156-.187-8.594-8.844-8.594-8.875-.062-.062zm57.188.282l-8.375 8.656-8.563 8.844-.156.156 8.156 7.906 8.844 8.594.531.5c.476-.764.75-1.705.75-2.719v-28.625c0-1.294-.448-2.468-1.187-3.312zm-38.782 18.718l-7.812 7.594-8.875 8.594-1.125 1.094c.593.382 1.268.625 2 .625h51.719c.88 0 1.678-.338 2.344-.875l-.562-.562-8.875-8.594-8.156-7.875-7.344 7.562c-.397.264-.663.556-1.051.735-.625.289-1.309.533-1.997.523-.69-.011-1.367-.281-1.986-.585-.311-.153-.477-.305-.841-.61l-7.439-7.626z" :fill="!darkMode ? 'white' : '#3D3D3D'"/></g></svg>
+                </a>
+              </div>
+              <div class="col col-auto min-width-col">
+                <a title="Linktree" href="https://linktr.ee/jurebovha" target="_blank" rel="noopener noreferrer">
+                  <svg id="spinImg" height="50" width="50"  viewBox="-7.19 -5.39 814.38 679.39" xmlns="http://www.w3.org/2000/svg"><path d="m297.53 18.87c-13.49-24.26-48.54-24.26-62.02 0l-231.91 420.58c-10.79 21.57 5.39 45.83 29.66 45.83h156.4v159.06c0 16.18 13.49 29.66 29.67 29.66h91.68c16.18 0 29.66-13.48 29.66-29.66v-159.06h-43.14c-18.88 0-32.36-13.48-35.06-29.66 0-5.39 0-10.78 2.7-16.23l129.44-234.55z" :fill="darkMode ? '#D8D8D8' : '#5C5C5C'"/><path d="m502.47 18.87c13.49-24.26 48.54-24.26 62.02 0l231.91 420.58c10.79 21.57-5.39 45.83-29.66 45.83h-153.71v159.06c0 16.18-13.48 29.66-29.69 29.66h-97.05c-16.18 0-29.66-13.48-29.66-29.66v-159.06h43.15c18.87 0 32.35-13.48 35.05-29.66 0-5.39 0-10.78-2.7-16.23l-129.43-234.49z" :fill="darkMode ? 'white' : '#3D3D3D'"/></svg>
+                </a>
               </div>
 
             </div>
 
-            <div id="hideOnMobile" class="col"><hr/></div>
-
           </div>
-        </animated-component>
 
-        <animated-component>
-          <div id="slide-in-left" class="row align-items-center mt-5">
+          <div id="hideOnMobile" class="col"><hr/></div>
+
+        </div>
+      </animated-component>
+
+      <animated-component>
+        <div id="slide-in-left" class="row align-items-center mt-5">
 
           <div id="hideOnMobile" class="col justify-content-center"><hr/></div>
 
@@ -93,9 +91,7 @@
           </div>
 
         </div>
-        </animated-component>
-
-      </div>
+      </animated-component>
 
     </div>
   </Smoothie>

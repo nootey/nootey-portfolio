@@ -6,17 +6,18 @@ html[theme='light'] {
     --background-color-primary: #FFFFFF;
     --background-color-secondary: #f5f5f5;
     --background-color-tertiary: #E3E3E3;
-    --accent-color: #248EFF;
+    --accent-color: #476EF7;
     --border-color: #DEE2E6;
     --text-color-primary: #222;
     --text-color-secondary: #524C4C;
     --text-color-tertiary: #9B9B9B;
     --title-color-primary: #3A4653;
+    --footer-color: #262323;
 }
   
 html[theme='dark'] {
-    --background-color-primary: #222222;
-    --background-color-secondary: #2B2B2B;
+    --background-color-primary: #100f0f;
+    --background-color-secondary: #1a1a1a;
     --background-color-tertiary: #1E1E1E;
     --accent-color: #F6C216;
     --border-color: #555555;
@@ -24,6 +25,7 @@ html[theme='dark'] {
     --text-color-secondary: #BEBEBE;
     --text-color-tertiary: #808080;
     --title-color-primary: #CCCCCC;
+    --footer-color: #222121;
 }
 
 .smoothie-container {
