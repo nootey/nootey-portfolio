@@ -9,6 +9,7 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 
 import './style/app.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 library.add(fas)
 library.add(far)
