@@ -9,9 +9,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, defineProps, withDefaults } from 'vue';
-
-const props = defineProps({ animationType: { type: String, default: 'fade' } });
+import { ref, onMounted} from 'vue';
 
 const target = ref(null);
 const animate = ref(false);

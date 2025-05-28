@@ -1,45 +1,32 @@
+<script setup>
+import { onMounted } from "vue";
+import { useThemeStore } from "./services/store/theme";
+
+import Navbar from "../src/components/Navbar.vue";
+import Main from "../src/components/Main.vue";
+import Footer from "../src/components/Footer.vue";
+
+const themeStore = useThemeStore();
+
+onMounted(() => {
+  themeStore.applyTheme();
+});
+
+const toggleDarkMode = () => {
+  themeStore.toggleDarkMode();
+  themeStore.applyTheme();
+};
+</script>
+
 <template>
   <div id="app">
-    <Navbar @changeTheme="toggleDarkMode" :darkMode="darkMode" />
-<!--    <div class="content-wrapper">-->
-<!--      <Main :darkMode="darkMode" />-->
-<!--    </div>-->
-    <Main :darkMode="darkMode" />
-    <Footer></Footer>
+    <Navbar @changeTheme="toggleDarkMode" :darkMode="themeStore.darkMode" />
+    <Main :darkMode="themeStore.darkMode" />
+    <Footer />
   </div>
 </template>
 
-<script setup>
-import Navbar from "../src/components/Navbar.vue";
-import Main from "../src/components/Main.vue";
-
-import {onMounted, ref} from "vue";
-import {useStore} from "vuex";
-import Footer from "../src/components/Footer.vue";
-
-onMounted(() => {
-  const darkModeVar = localStorage.getItem('darkMode');
-  darkMode.value = darkModeVar === 'true' ? true : false;
-  applyTheme();
-});
-
-const store = useStore();
-const darkMode = ref(false);
-
-const toggleDarkMode = () => {
-  darkMode.value = !darkMode.value;
-  store.commit("applyTheme", darkMode.value);
-  applyTheme();
-};
-
-const applyTheme = () => {
-  const theme = darkMode.value ? 'dark' : 'light'
-  document.documentElement.setAttribute('theme', theme);
-}
-
-</script>
-
-<style>
+<style lang="scss">
 
 #app {
   display: flex;

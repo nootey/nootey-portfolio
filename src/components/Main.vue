@@ -12,9 +12,6 @@ import Projects from "../components/Projects.vue";
 import Contact from "../components/Contact.vue";
 import Footer from "../components/Footer.vue";
 
-// eslint-disable-next-line no-undef
-const props = defineProps(['darkMode']);
-
 </script>
 
 <style scoped>

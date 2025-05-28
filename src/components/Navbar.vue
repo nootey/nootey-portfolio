@@ -37,7 +37,6 @@
 <script>
 
  import { ref, onMounted, onUnmounted, watch } from 'vue';
- import { useStore } from "vuex";
 
  export default {
     props: ['darkMode'],
@@ -50,7 +49,6 @@
         const mobile_nav = ref(false);
         const window_width = ref(window.innerWidth);
         const nav_open = ref(false);
-        const store = useStore();
 
         const onWidthChange = () => {
             window_width.value = window.innerWidth;

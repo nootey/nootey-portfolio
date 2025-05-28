@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import App from '../App.vue'
-import ProjectDisplay from '../components/ProjectDisplay.vue'
-import Main from '../components/Main.vue'
+import App from '../../App.vue'
+import ProjectDisplay from '../../components/ProjectDisplay.vue'
+import Main from '../../components/Main.vue'
 
 const routes = [
   {
