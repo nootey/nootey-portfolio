@@ -34,62 +34,55 @@
    
 </template>
 
-<script>
+<script setup>
+import { ref, onMounted, onUnmounted, watch } from 'vue';
 
- import { ref, onMounted, onUnmounted, watch } from 'vue';
+const props = defineProps({
+  darkMode: Boolean
+});
+const emit = defineEmits(['changeTheme']);
 
- export default {
-    props: ['darkMode'],
-    emits: ['changeTheme'],
-    setup(props, { emit }){
-        onMounted(() => window.addEventListener('resize', onWidthChange))
-        onUnmounted(() => window.removeEventListener('resize', onWidthChange))
-        const nav = ref(false);
-        const mobile = ref(false);
-        const mobile_nav = ref(false);
-        const window_width = ref(window.innerWidth);
-        const nav_open = ref(false);
+const nav = ref(false);
+const mobile = ref(false);
+const mobile_nav = ref(false);
+const window_width = ref(window.innerWidth);
+const nav_open = ref(false);
 
-        const onWidthChange = () => {
-            window_width.value = window.innerWidth;
-        }
+const onWidthChange = () => {
+  window_width.value = window.innerWidth;
+};
 
-        function toggleNavbar() {
-            mobile_nav.value = !mobile_nav.value;
-            nav_open.value = !nav_open.value;
-        }
+onMounted(() => {
+  window.addEventListener('resize', onWidthChange);
+  watchWidth(); // Initialize on mount
+});
 
-        function watchWidth() {
-            if (window_width.value <= 750) {
-                mobile.value = true;
-            } else {
-                mobile.value = false;
-                mobile_nav.value = false;
-                nav_open.value = false;
-            }
-        }
+onUnmounted(() => {
+  window.removeEventListener('resize', onWidthChange);
+});
 
-      function callEmit(){
-        emit('changeTheme')
-      }
+watch(window_width, () => {
+  watchWidth();
+});
 
-
-        watchWidth();
-
-        watch(window_width, () => {
-            watchWidth();
-        })
-
-    return {
-        nav,
-        mobile,
-        mobile_nav,
-        toggleNavbar,
-      callEmit,
-        nav_open,
-    }
+function watchWidth() {
+  if (window_width.value <= 750) {
+    mobile.value = true;
+  } else {
+    mobile.value = false;
+    mobile_nav.value = false;
+    nav_open.value = false;
+  }
 }
- }
+
+function toggleNavbar() {
+  mobile_nav.value = !mobile_nav.value;
+  nav_open.value = !nav_open.value;
+}
+
+function callEmit() {
+  emit('changeTheme');
+}
 </script>
 
 <style scoped>

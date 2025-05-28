@@ -13,7 +13,6 @@ import moment from "moment";
 const currentYear = moment().year();
 </script>
     
-    <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .footer {
   border-top: 20px solid var(--accent-color);

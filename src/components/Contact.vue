@@ -1,8 +1,8 @@
 <template>
 
-  <div id="hideOnMobile" class="rectangle">
-    <h2 id="hideOnMobile" >Contact</h2>
-  </div>
+<div id="hideOnMobile" class="rectangle">
+  <h2 id="hideOnMobile" >Contact</h2>
+</div>
 
   <Smoothie id="contact" :weight="0.01" class="smoothie-container" style="margin-bottom: 80px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; border-left: 1px solid var(--text-color-primary); border-right: 1px solid var(--text-color-primary);">
 
@@ -65,38 +65,31 @@
 
   </Smoothie>
 
-  </template>
-    
-  <script>
-  import { Smoothie } from "vue-smoothie";
-  import AnimatedComponent from "../components/reusable/AnimatedComponent.vue";
-  import Footer from "../components/Footer.vue"
+</template>
 
-  export default {
-    name: 'Contact',
-    props: ['darkMode'],
-    components: {AnimatedComponent, Smoothie, Footer},
-    setup() {
-      function sendMessage(){
-        let formName = document.getElementById('formName');
-        let name = formName.value;
-        let formEmail = document.getElementById('formEmail');
-        let email = formEmail.value;
-        let formMessage = document.getElementById('formMessage');
-        let message = formMessage.value;
+<script setup>
+import { Smoothie } from 'vue-smoothie';
+import AnimatedComponent from '../components/reusable/AnimatedComponent.vue';
 
-        console.log(name)
-        console.log(email)
-        console.log(message)
-      }
-      return {
-        sendMessage
-      }
-    }
-  }
-  </script>
+const props = defineProps({
+  darkMode: Boolean
+});
 
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
+function sendMessage() {
+  const formName = document.getElementById('formName');
+  const formEmail = document.getElementById('formEmail');
+  const formMessage = document.getElementById('formMessage');
+
+  const name = formName?.value;
+  const email = formEmail?.value;
+  const message = formMessage?.value;
+
+  console.log(name);
+  console.log(email);
+  console.log(message);
+}
+</script>
+
 <style scoped>
 form {
     max-width: 50rem;

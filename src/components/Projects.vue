@@ -69,22 +69,15 @@
       </div>
     </Smoothie>
   </template>
-    
-  <script>
-  import { Smoothie } from "vue-smoothie";
-  import AnimatedComponent from "../components/reusable/AnimatedComponent.vue";
 
-  export default {
-    name: 'Projects',
-    props: ['darkMode'],
-    components: {AnimatedComponent, Smoothie},
-    setup() {
-      return {
+<script setup>
+import { Smoothie } from 'vue-smoothie';
+import AnimatedComponent from '../components/reusable/AnimatedComponent.vue';
 
-      }
-    }
-  }
-  </script>
+const props = defineProps({
+  darkMode: Boolean
+});
+</script>
 
   <style scoped>
   .rectangle {

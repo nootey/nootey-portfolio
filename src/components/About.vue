@@ -97,24 +97,16 @@
   </Smoothie>
   
 </template>
-  
-<script>
-  import { Smoothie } from "vue-smoothie";
-  import AnimatedComponent from '../components/reusable/AnimatedComponent.vue';
 
-  export default {
-    name: 'About',
-    props: ['darkMode'],
-    components: {Smoothie, AnimatedComponent},
-    setup() {
-      return {
+<script setup>
+import { Smoothie } from 'vue-smoothie';
+import AnimatedComponent from '../components/reusable/AnimatedComponent.vue';
 
-      }
-    }
-  }
+const props = defineProps({
+  darkMode: Boolean
+});
 </script>
   
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   #spinImg {
       transition: transform 0.5s ease-in-out;
@@ -146,12 +138,12 @@
   @keyframes revealFromRight {
     0% {
       opacity: 0;
-      transform: translateX(1em); /* Adjusted translateY value for smoother appearance */
+      transform: translateX(1em);
     }
     30%,
     50% {
       opacity: 1;
-      transform: translateX(0); /* Keep it at translateY(0) to maintain position */
+      transform: translateX(0);
     }
     100% {
       opacity: 1;
@@ -162,12 +154,12 @@
   @keyframes revealFromLeft {
     0% {
       opacity: 0;
-      transform: translateX(-1em); /* Adjusted translateY value for smoother appearance */
+      transform: translateX(-1em);
     }
     30%,
     50% {
       opacity: 1;
-      transform: translateX(0); /* Keep it at translateY(0) to maintain position */
+      transform: translateX(0);
     }
     100% {
       opacity: 1;

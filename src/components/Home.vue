@@ -57,15 +57,14 @@
   </Smoothie>
 </template>
 
-<script>
-import { Smoothie } from "vue-smoothie";
-import AnimatedComponent from "../components/reusable/AnimatedComponent.vue";
+<script setup>
+import { defineProps } from 'vue';
+import { Smoothie } from 'vue-smoothie';
+import AnimatedComponent from '../components/reusable/AnimatedComponent.vue';
 
-export default {
-  name: 'Home',
-  props: ['darkMode'],
-  components: { AnimatedComponent, Smoothie },
-};
+const props = defineProps({
+  darkMode: Boolean
+});
 </script>
 
 <style scoped>
