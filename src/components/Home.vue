@@ -45,9 +45,9 @@
 
       <div class="row mx-auto text-center justify-content-center p-3 mt-5">
         <a class="arrow bounce col col-auto min-width-col" href="#about">
-          <img v-if="darkMode" src="@/assets/images/arrow-light.png"
+          <img v-if="darkMode" src="../assets/images/arrow-light.png"
                width="50"/>
-          <img v-else src="@/assets/images/arrow-dark.png"
+          <img v-else src="../assets/images/arrow-dark.png"
                width="50"/>
         </a>
       </div>
@@ -59,7 +59,7 @@
 
 <script>
 import { Smoothie } from "vue-smoothie";
-import AnimatedComponent from "@/components/reusable/AnimatedComponent.vue";
+import AnimatedComponent from "../components/reusable/AnimatedComponent.vue";
 
 export default {
   name: 'Home',

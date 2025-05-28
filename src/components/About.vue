@@ -3,7 +3,7 @@
     <div id="main-row" style="width: 99%; margin: auto;" class="row w-100 align-items-center justify-content-center mb-5">
 
       <div class="main-col col w-50" >
-        <img id="mainImg" src="@/assets/images/close-up-laptop.jpg" style="width: 100%; height: auto; border-radius: 12px;"/>
+        <img id="mainImg" src="../assets/images/close-up-laptop.jpg" style="width: 100%; height: auto; border-radius: 12px;"/>
       </div>
 
       <div class="main-col col w-50">
@@ -100,7 +100,7 @@
   
 <script>
   import { Smoothie } from "vue-smoothie";
-  import AnimatedComponent from '@/components/reusable/AnimatedComponent.vue';
+  import AnimatedComponent from '../components/reusable/AnimatedComponent.vue';
 
   export default {
     name: 'About',

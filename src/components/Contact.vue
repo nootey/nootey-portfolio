@@ -69,8 +69,8 @@
     
   <script>
   import { Smoothie } from "vue-smoothie";
-  import AnimatedComponent from "@/components/reusable/AnimatedComponent.vue";
-  import Footer from "@/components/Footer.vue"
+  import AnimatedComponent from "../components/reusable/AnimatedComponent.vue";
+  import Footer from "../components/Footer.vue"
 
   export default {
     name: 'Contact',

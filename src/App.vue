@@ -15,7 +15,7 @@ import Main from "../src/components/Main.vue";
 
 import {onMounted, ref} from "vue";
 import {useStore} from "vuex";
-import Footer from "@/components/Footer.vue";
+import Footer from "../src/components/Footer.vue";
 
 onMounted(() => {
   const darkModeVar = localStorage.getItem('darkMode');
