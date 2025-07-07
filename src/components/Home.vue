@@ -14,11 +14,9 @@
         </animated-component>
 
         <div class="paragraph-text row p-3 mt-3" style="font-size: 1.15rem;">
-          I provide businesses with cutting-edge digital solutions
-          tailored to their needs, including website design, web development,
-          web applications, and digital marketing.
-          I am equipped with a solid foundation in computer science
-          and a hunger for continuous learning and growth in the ever-evolving world of technology.
+          I’m a backend developer with a strong foundation in computer science and a passion for building smart, scalable digital solutions.
+          In my current role, I focus on developing and maintaining robust backend systems that power websites and web applications.
+          I'm always exploring new technologies and constantly learning to stay ahead in the fast-moving tech world.
         </div>
 
       </div>

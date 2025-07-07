@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
       <div style="font-size: 1rem; background: var(--footer-color); color: white;" class="align-items-center;">
-        Copyright © {{ currentYear }} | Bure web designs | All Rights Reserved
+        Copyright © {{ currentYear }} | Nootey | All Rights Reserved
       </div>
   </footer>
 </template>

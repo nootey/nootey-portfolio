@@ -12,13 +12,14 @@
         </animated-component>
 
         <div class="paragraph-text flex flex-row p-3 text-left">
-          I work full-time as a software engineer and part time as a freelancer offering various services. I'm based in Ljubljana, Slovenia.
+          I work full-time as a software engineer, based in Ljubljana, Slovenia.
           I'm passionate about software development, but my hobbies extend to artificial intelligence, fitness, crypto, finance and cars.
         </div>
 
         <div class="paragraph-text flex flex-row p-3 text-left">
-          I create state-of-the-art digital solutions with a focus on your needs. Examples are: business websites, e-commerce,
-          administrative applications, CRMs and more.
+          I design and implement architecture for modern web applications.
+          While my main focus is backend development, I also contribute to UI development and enjoy scripting in Python,
+          to automate tasks and streamline workflows.
         </div>
 
       </div>
