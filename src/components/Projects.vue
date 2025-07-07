@@ -38,26 +38,26 @@
             <div class="carousel-inner">
 
               <div class="carousel-item active">
-                <img src="../assets/images/ims-cal.png" class="d-block w-100" alt="Project 1">
+                <img src="../assets/images/sph.png" class="d-block w-100" alt="Project 1">
+                <div class="carousel-caption d-none d-md-block rounded p-3">
+                  <h5>Sportheartt</h5>
+                  <p>Athlete measurement app.</p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img src="../assets/images/ng-ml.png" class="d-block w-100" alt="Project 2">
+                <div class="carousel-caption d-none d-md-block rounded p-3">
+                  <h5>NoiseGuard ML</h5>
+                  <p>Sound classification pipeline.</p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img src="../assets/images/ims-cal.png" class="d-block w-100" alt="Project 3">
                 <div class="carousel-caption d-none d-md-block rounded p-3">
                   <h5>Calibration system</h5>
                   <p>With Hubspot integration.</p>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <img src="../assets/images/placeholder_2.jpg" class="d-block w-100" alt="Project 2">
-                <div class="carousel-caption d-none d-md-block rounded p-3">
-                  <h5>Project Two</h5>
-                  <p>Placeholder 2.</p>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <img src="../assets/images/placeholder_1.jpg" class="d-block w-100" alt="Project 3">
-                <div class="carousel-caption d-none d-md-block rounded p-3">
-                  <h5>Project Three</h5>
-                  <p>Placeholder 3.</p>
                 </div>
               </div>
 
@@ -92,7 +92,7 @@ onMounted(() => {
   const carouselEl = document.getElementById('projectCarousel');
   if (carouselEl) {
     new Carousel(carouselEl, {
-      interval: 3000,   // auto-slide every 3 seconds
+      interval: 3000,
       ride: 'carousel',
       pause: 'hover',
       wrap: true
