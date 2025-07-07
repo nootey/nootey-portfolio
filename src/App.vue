@@ -21,7 +21,7 @@ const toggleDarkMode = () => {
 <template>
   <div id="app">
     <Navbar @changeTheme="toggleDarkMode" :darkMode="themeStore.darkMode" />
-    <Main :darkMode="themeStore.darkMode" />
+    <router-view :darkMode="themeStore.darkMode" />
     <Footer />
   </div>
 </template>

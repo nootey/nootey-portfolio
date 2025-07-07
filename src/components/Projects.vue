@@ -26,7 +26,7 @@
           <div class="paragraph-text row p-3 mt-4">
 
             <div class="col">
-              <button @click="router.push({name: 'project-view'})" class="main-button" tabIndex="-1" style="width: 50%;"> Project view</button>
+              <button @click="$router.push({name: 'project-view'})" class="main-button" tabIndex="-1" style="width: 50%;"> Project view</button>
             </div>
           </div>
 
