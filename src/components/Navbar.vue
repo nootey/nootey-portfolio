@@ -3,9 +3,8 @@
         <div class="nav-wrapper flex flex-row">
             <div class="navbar">
                 <!-- logo -->
-                <div class="logo flex flex-row text-center align-items-center">
-<!--                    <img src="../assets/bure_logo.png" />-->
-                    <div class="mt-2"> {{ "Logo" }}</div>
+                <div class="logo flex flex-row text-center align-items-center mt-1">
+                    <img src="../assets/images/nootey.png" height="33"/>
                 </div>
             
                 <!-- nav -->
@@ -91,7 +90,6 @@ function callEmit() {
     z-index: 2;
     position: fixed;
     width: 100%;
-    /* background: var(--background-color-secondary); */
 }
 
 .navbar {
@@ -276,7 +274,7 @@ li:hover:after {
 
 @media only screen and (max-width: 850px) {
   .navbar{
-    height: 35px;
+    height: 50px;
     width: 99%;
     margin-bottom: 0;
   }
