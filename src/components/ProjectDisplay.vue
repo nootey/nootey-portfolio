@@ -1,28 +1,24 @@
 <template>
 
-  <Smoothie id="project-view" :weight="0.03" class="smoothie-container" style="padding-top: 100px; border-top-left-radius: 20px; border-top-right-radius: 20px;">
-    <div id="hideOnMobile" class="rectangle">
-      <h2 id="hideOnMobile">Project display</h2>
-    </div>
+  <div class="w-100 align-items-center justify-content-center" style="padding: 100px 25px 200px 25px;">
 
-    <div class="project-card-wrapper">
-      <div
-          class="project-col"
-          v-for="(project, index) in projects"
-          :key="index">
-          <ProjectCard
-              :title="project.title"
-              :description="project.description"
-          />
+    <animated-component>
+      <div class="title">Project display</div>
+    </animated-component>
+
+    <div class="d-flex flex-column gap-4 p-3 align-items-center justify-content-center">
+      <div v-for="(project, index) in projects" :key="index">
+        <ProjectCard :title="project.title" :description="project.description"
+                     :tech_stack="project.tech_stack" :key_words="project.key_words" :website="project.website"/>
       </div>
     </div>
-  </Smoothie>
+  </div>
 </template>
 
 <script setup>
 
-import {Smoothie} from "vue-smoothie";
 import ProjectCard from "../components/reusable/ProjectCard.vue";
+import AnimatedComponent from "../components/reusable/AnimatedComponent.vue";
 const projects = [
   {
     title: "Sportheart",
@@ -30,33 +26,44 @@ const projects = [
         "It integrates data from Polar devices to provide detailed insights into physical metrics, empowering athletes and coaches to make data-driven decisions. " +
         "The system supports both web and mobile clients, offering robust interaction through HTTP and gRPC protocols. " +
         "The mobile app communicates directly with the Polar SDK to gather real-time biometric data. " +
-        "I am primarily responsible for building and maintaining the backend server, written in Go, as well as the Android application, developed in Kotlin. Key features include user authentication, real-time data syncing, and a scalable microservices architecture optimized for performance and reliability."
+        "I am primarily responsible for building and maintaining the backend server, written in Go, as well as the Android application, developed in Kotlin. Key features include user authentication, real-time data syncing, and a scalable microservices architecture optimized for performance and reliability.",
+    tech_stack: ["Go", "Kotlin", "TimescaleDB"],
+    key_words: ["Centralization", "Micro service", "Measurements"],
+    website: "",
   },
+
   {
     title: "NoiseGuard ML",
     description: "NoiseGuard ML is a FastAPI-based audio processing pipeline that segments .mp3 recordings using soundscape percentile metadata and classifies them with multiple ML models. " +
-        "I developed the backend, implemented authentication, a priority queue, and structured logging. I also created utility and testing scripts, and re-trained a classification model to improve performance on urban soundscapes, which represent the majority of NoiseGuard's data."
+        "I developed the backend, implemented authentication, a priority queue, and structured logging. I also created utility and testing scripts, and re-trained a classification model to improve performance on urban soundscapes, which represent the majority of NoiseGuard's data.",
+    tech_stack: ["Python", "FastAPI", "Postgres"],
+    key_words: ["AI", "Sound classification", "Re training"],
+    website: "https://ims.si/en/product/noise-guard/",
   },
   {
     title: "Calibration management system",
-    description: "This is an internal operations tool for managing calibrations, repairs, orders, and customer interactions. I implemented workflow-enhancing features, integrated HubSpot for CRM synchronization, and developed systems for automatic notifications and detailed activity logging to streamline day-to-day operations."
+    description: "This is an internal operations tool for managing calibrations, repairs, orders, and customer interactions. I implemented workflow-enhancing features, integrated HubSpot for CRM synchronization, and developed systems for automatic notifications and detailed activity logging to streamline day-to-day operations.",
+    tech_stack: ["Laravel", "Vue", "MySQL"],
+    key_words: ["Hubspot", "Internal operations", "Customer management"],
+    website: "https://kalibracije.ims.si/",
+  },
+  {
+    title: "Personal AI agent assistant",
+    "description": "I designed and developed an AI-powered assistant to streamline daily operations within a company. The assistant transcribes meetings, processes product and company-related information, and builds a centralized knowledge base. Leveraging this knowledge, it can summarize meetings, generate action plans, analyze documents, and keep team members informed—minimizing the need for constant meeting attendance.",
+    tech_stack: ["NextJS", "AWS", "Prisma"],
+    key_words: ["AI", "Knowledge base", "Transcription"],
+    website: "https://pmbot.ea-lab.eu/",
+  },
+  {
+    title: "Licensing server",
+    "description": "I designed and developed a secure internal licensing server to manage and validate authorized devices across our hardware ecosystem, including Raspberry Pi units, SLM modules, and custom-built solutions. The server ensures that only registered and authenticated hardware can access company resources or operate within defined parameters. It includes features such as device registration, license generation, validation endpoints.",
+    tech_stack: ["Go", "Vue", "MongoDB"],
+    key_words: ["License", "Security"],
+    website: "https://license.noise-guard.com/",
   }
 ];
 </script>
 
 <style scoped>
-.project-card-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 1rem;
-}
 
-.project-col {
-  flex: 1 1 300px;
-  max-width: 350px;
-  min-width: 280px;
-  display: flex;
-}
 </style>
