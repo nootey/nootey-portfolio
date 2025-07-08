@@ -38,7 +38,7 @@ const props = defineProps({
 
 <style scoped>
 .project-card {
-  flex-grow: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--border-color);
