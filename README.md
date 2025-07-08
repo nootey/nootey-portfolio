@@ -1,24 +1,17 @@
 # personal-portfolio
 
-## Project setup
-```
-npm install
+> I wanted to build a small project showcase website. I am by no means a front-end developer.
+
+This site serves as my professional portfolio – showcasing my projects, experience, and contact info.
+
+The project requires an `.env` file:
+
+```js
+VITE_FORMSPREE_ID=<id>
+VITE_WEBSITE_NAME=<name>
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+<hr>
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+The live website is available at: 
+- <url>
