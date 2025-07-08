@@ -10,36 +10,37 @@
 
       <div class="main-col col w-50 p-2">
 
-        <form id="form" style="width: 60%; border-top-left-radius: 20px; border-top: 8px solid var(--accent-color); border-left: 8px solid var(--accent-color)">
-          <!-- Name -->
+        <form id="form"
+              :action="formActionUrl"
+              method="POST"
+              style="width: 60%; border-top-left-radius: 20px; border-top: 8px solid var(--accent-color); border-left: 8px solid var(--accent-color)">
+
+          <input type="hidden" name="_subject" :value="'New message from: ' + websiteName">
+
           <div class="form-group" style="width: 90%;">
             <label for="formName" class="d-block">
               <i class="icon" data-feather="user"></i>
             </label>
-            <input type="text" id="formName" class="form-control form-control-lg thick" placeholder="Name">
+            <input required type="text" id="formName" name="name" class="form-control form-control-lg thick" placeholder="Name">
           </div>
 
-          <!-- E-mail -->
           <div class="form-group position-relative" style="width: 90%;">
             <label for="formEmail" class="d-block">
               <i class="icon" data-feather="mail"></i>
             </label>
-            <input type="email" id="formEmail" class="form-control form-control-lg thick" placeholder="E-mail">
+            <input required type="email" id="formEmail" name="email" class="form-control form-control-lg thick" placeholder="E-mail">
           </div>
 
-          <!-- Message -->
           <div class="form-group message" style="width: 90%;">
-            <textarea id="formMessage" class="form-control form-control-lg" rows="7" placeholder="Message"></textarea>
+            <textarea required id="formMessage" name="message" class="form-control form-control-lg" rows="7" placeholder="Message"></textarea>
           </div>
 
           <div class="row mt-3 w-75" style="margin-left: 25%; !important">
             <div class="col" >
-              <button type="button" class="main-button" tabIndex="-1"   @click="sendMessage">Send message</button>
+              <button type="submit" class="main-button" tabIndex="-1" >Send message</button>
             </div>
           </div>
-
         </form>
-
 
       </div>
 
@@ -50,15 +51,18 @@
 
         <div class="paragraph-text flex flex-row p-3 text-left">
           Have any questions? Feel free to contact me, and I'll be happy to assist you as soon as possible.
-          You can also directly write to the email bellow.
+          You can also directly write to the email below.
         </div>
 
         <div class="paragraph-text flex flex-row p-3">
-          <div class="row" style="border-left: 5px solid var(--accent-color);">
+          <div class="row" style="border-left: 5px solid var(--accent-color); padding-left: 10px;">
             <div class="row"><b>Email</b></div>
-            <div class="row"><span>poiskusni@gmail.com</span></div>
+            <div class="row">
+              <a href="mailto:poiskusni@gmail.com" class="email-link">poiskusni@gmail.com</a>
+            </div>
           </div>
         </div>
+
       </div>
 
     </div>
@@ -74,6 +78,10 @@ import AnimatedComponent from '../components/reusable/AnimatedComponent.vue';
 const props = defineProps({
   darkMode: Boolean
 });
+
+const formspreeId = import.meta.env.VITE_FORMSPREE_ID;
+const formActionUrl = `https://formspree.io/f/${formspreeId}`;
+const websiteName = import.meta.env.VITE_WEBSITE_NAME;
 
 function sendMessage() {
   const formName = document.getElementById('formName');
@@ -213,6 +221,17 @@ form {
   .paragraph-text{
     font-size: 1rem !important;
   }
+}
+
+.email-link {
+  color: var(--text-color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+.email-link:hover {
+  opacity: 0.8;
 }
 
 </style>
