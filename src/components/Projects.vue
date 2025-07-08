@@ -78,26 +78,9 @@
 <script setup>
 import { Smoothie } from 'vue-smoothie';
 import AnimatedComponent from '../components/reusable/AnimatedComponent.vue';
-import {useRouter} from "vue-router";
-import {onMounted} from "vue";
-import { Carousel } from 'bootstrap';
-
-const router = useRouter();
 
 const props = defineProps({
   darkMode: Boolean
-});
-
-onMounted(() => {
-  const carouselEl = document.getElementById('projectCarousel');
-  if (carouselEl) {
-    new Carousel(carouselEl, {
-      interval: 3000,
-      ride: 'carousel',
-      pause: 'hover',
-      wrap: true
-    });
-  }
 });
 
 </script>
