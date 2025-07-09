@@ -4,73 +4,59 @@
     </div>
 
     <Smoothie id="projects" :weight="0.01" class="smoothie-container" style="border-left: 1px solid var(--text-color-primary); border-right: 1px solid var(--text-color-primary);">
+      <div class="projects-vertical-layout">
 
-      <div id="main-row" style="width: 80%; margin: auto;" class="row align-items-center justify-content-center gap-2 mb-5">
-
-        <!-- Left text -->
-        <div class="main-col col w-50">
-          <animated-component>
-            <div class="title">Projects</div>
-          </animated-component>
-
-          <div class="paragraph-text row p-4 text-left">
-            Here are a few projects I’ve worked on—ranging from professional applications developed as part of my full-time role to personal experiments and side projects.
-            They reflect my interest in solving real problems.
-          </div>
-
-          <div class="paragraph-text row p-4 text-left">
-            Regardless of the complexity of the project, I bring my best and put the clients needs at the forefront. Click the button
-            below to view some of my projects.
-          </div>
-
-          <div class="paragraph-text row p-3 mt-4">
-
-            <div class="col">
-              <button @click="$router.push({name: 'project-view'})" class="main-button" tabIndex="-1" style="width: 50%;"> Project view</button>
+        <div class="projects-content">
+          <div class="projects-content-inner">
+            <animated-component>
+              <div class="title">Projects</div>
+            </animated-component>
+            <div class="paragraph-text row text-left">
+              Here are a few projects I’ve worked on—ranging from professional applications developed as part of my full-time role to personal experiments and side projects. They reflect my interest in solving real problems.
+            </div>
+            <div class="paragraph-text row text-left">
+              Regardless of the complexity of the project, I bring my best and put the clients needs at the forefront. Click the button below to view some of my projects.
             </div>
           </div>
 
-        </div>
-
-        <!-- Right carousel -->
-        <div class="main-col col w-50">
-          <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-
-              <div class="carousel-item active">
-                <img src="../assets/images/sph.png" class="d-block w-100" alt="Project 1">
-                <div class="carousel-caption d-none d-md-block rounded p-3">
-                  <h5>Sportheartt</h5>
-                  <p>Athlete measurement app.</p>
+          <div class="projects-carousel-wrapper">
+            <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="../assets/images/sph.png" class="d-block w-100" alt="Project 1">
+                  <div class="carousel-caption d-none d-md-block rounded p-3">
+                    <h5>Sportheartt</h5>
+                    <p>Athlete measurement app.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="../assets/images/ng-ml.png" class="d-block w-100" alt="Project 2">
+                  <div class="carousel-caption d-none d-md-block rounded p-3">
+                    <h5>NoiseGuard ML</h5>
+                    <p>Sound classification pipeline.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="../assets/images/ims-cal.png" class="d-block w-100" alt="Project 3">
+                  <div class="carousel-caption d-none d-md-block rounded p-3">
+                    <h5>Calibration system</h5>
+                    <p>With Hubspot integration.</p>
+                  </div>
                 </div>
               </div>
-
-              <div class="carousel-item">
-                <img src="../assets/images/ng-ml.png" class="d-block w-100" alt="Project 2">
-                <div class="carousel-caption d-none d-md-block rounded p-3">
-                  <h5>NoiseGuard ML</h5>
-                  <p>Sound classification pipeline.</p>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <img src="../assets/images/ims-cal.png" class="d-block w-100" alt="Project 3">
-                <div class="carousel-caption d-none d-md-block rounded p-3">
-                  <h5>Calibration system</h5>
-                  <p>With Hubspot integration.</p>
-                </div>
-              </div>
-
+              <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </button>
+          </div>
+
+          <div class="button-row mt-5">
+            <button @click="$router.push({name: 'project-view'})" class="main-button" tabIndex="-1" style="width: 50%;"> Project view</button>
           </div>
         </div>
-
       </div>
     </Smoothie>
   </template>
@@ -119,11 +105,57 @@ const props = defineProps({
   transform: rotate(90deg);
 }
 
+.projects-vertical-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 80vh;
+}
+
+.projects-content {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 0 2rem 200px;
+  text-align: left;
+  align-items: flex-center;
+}
+
+.projects-content-inner {
+  padding-left: 1rem;
+}
+
+.projects-carousel-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2rem 0 0 0;
+}
+
+.carousel {
+  width: 100%;
+  max-width: 1000px;
+  min-height: 350px;
+}
+
+.paragraph-text {
+  margin-bottom: 1.5rem;
+}
+
+.button-row {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
 @media only screen and (max-width: 1770px) {
   .rectangle{
     margin-left: 0 !important;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+  }
+  .projects-content {
+    margin-left: 120px;
   }
 }
 
@@ -131,23 +163,40 @@ const props = defineProps({
   .rectangle{
       max-width: 90px;
   }
+  .projects-content {
+    margin-left: 60px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
-
   #hideOnMobile{
     display: none;
   }
-  #main-row {
-    width: 90% !important;
-    flex-direction: column;
-    flex-wrap: wrap;
+  .projects-vertical-layout {
+    align-items: center;
   }
-  .main-col {
-    width: 100% !important;
+  .projects-content {
+    margin: 0;
+    padding: 0 1rem;
+    text-align: center;
+    max-width: 100%;
   }
-  .paragraph-text{
-    font-size: 1rem !important;
+  .projects-content-inner {
+    padding-left: 0;
+  }
+  .projects-carousel-wrapper {
+    margin-top: 1rem;
+  }
+  .paragraph-text {
+    margin-bottom: 1.2rem;
+  }
+  .button-row {
+    margin-bottom: 1.5rem;
+  }
+  .carousel {
+    width: 100vw;
+    min-height: 200px;
+    padding: 0 0.5rem;
   }
 }
 
