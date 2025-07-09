@@ -1,6 +1,6 @@
 <template>
 
-        <div class="nav-wrapper flex flex-row">
+        <div class="d-flex flex-row w-100 position-fixed z-3">
             <div class="navbar">
                 <!-- logo -->
                 <div class="logo flex flex-row text-center align-items-center mt-1">
@@ -86,23 +86,14 @@ function callEmit() {
 
 <style scoped>
 
-.nav-wrapper{
-    z-index: 2;
-    position: fixed;
-    width: 100%;
-}
-
 .navbar {
     z-index: 2;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    width: 90%;
+    width: 100%;
     height: 60px;
-    max-width: 1600px;
-    padding-left: 40px;
-    padding-right: 40px;
+    max-width: 1625px;
     margin: 0 auto;
-    margin-bottom: 15px;
     align-items: baseline;
 }
 
@@ -277,6 +268,12 @@ li:hover:after {
     height: 50px;
     width: 99%;
     margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 1750px) {
+  .navbar{
+    width: 90%;
   }
 }
 
