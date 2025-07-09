@@ -60,7 +60,6 @@ html[theme='dark'] {
 
 .title{
     text-align: left;
-    padding-left: 20px;
     font-size: 2.5rem;
     font-weight: 700;
     animation: 
@@ -158,10 +157,12 @@ box-shadow: none;
     }
     .paragraph-text{
         text-align: center;
-        /*font-size: 1rem;*/
     }
     .content-wrapper{
         padding-top: 30px;
+    }
+    .title{
+        text-align: center;
     }
 }
 
