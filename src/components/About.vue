@@ -1,27 +1,26 @@
 <template>
   <Smoothie id="about" :weight="0.03" class="smoothie-container" style="border-left: 1px solid var(--text-color-primary); border-right: 1px solid var(--text-color-primary);">
-    <div id="main-row" style="width: 99%; margin: auto;" class="row w-100 align-items-center justify-content-center mb-5">
+    <div id="main-row" style="width: 99%; margin: auto;" class="mb-5">
 
-      <div class="main-col col w-50" >
+      <div class="main-col">
         <img id="mainImg" src="../assets/images/setup-1.jpg" style="width: 100%; height: auto; border-radius: 12px;"/>
       </div>
 
-      <div class="main-col col w-50">
+      <div class="main-col gap-3">
         <animated-component>
           <div class="title">About me</div>
         </animated-component>
 
-        <div class="paragraph-text flex flex-row p-3 text-left">
+        <div class="paragraph-text d-flex flex-row text-left">
           I work full-time as a software engineer, based in Ljubljana, Slovenia.
           I'm passionate about software development, but my hobbies extend to artificial intelligence, fitness, crypto, finance and cars.
         </div>
 
-        <div class="paragraph-text flex flex-row p-3 text-left">
+        <div class="paragraph-text d-flex flex-row text-left">
           I design and implement architecture for modern web applications.
           While my main focus is backend development, I also contribute to UI development and enjoy scripting in Python,
           to automate tasks and streamline workflows.
         </div>
-
       </div>
 
     </div>
@@ -171,6 +170,27 @@ const props = defineProps({
     }
   }
 
+  #main-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .main-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+    max-width: 50%;
+  }
+
+  #main-row .main-col:first-child {
+  padding-left: 2rem; /* or try 3rem for more space */
+  }
+
   @media only screen and (max-width: 800px) {
     #hideOnMobile{
       display: none;
@@ -180,7 +200,17 @@ const props = defineProps({
     }
     #main-row {
       flex-direction: column-reverse;
-      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .main-col {
+      max-width: 100%;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      padding: 1rem;
+    }
+    #main-row .main-col:first-child {
+      padding-left: 0;
     }
     .icon-display{
       transform: scale(0.9);
@@ -191,9 +221,6 @@ const props = defineProps({
     }
     #slide-in-right{
       margin-top: 0 !important;
-    }
-    .main-col {
-      width: 100% !important;
     }
     .paragraph-text{
       font-size: 1rem !important;
