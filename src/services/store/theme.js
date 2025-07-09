@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 
 export const useThemeStore = defineStore('theme', {
     state: () => ({
-        darkMode: localStorage.getItem('darkMode') === 'true'
+        darkMode: localStorage.getItem('darkMode') !== 'false' // Default to dark theme unless explicitly set to false
     }),
     actions: {
         toggleDarkMode() {
