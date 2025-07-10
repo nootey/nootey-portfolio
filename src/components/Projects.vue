@@ -1,65 +1,56 @@
 <template>
-    <div id="hideOnMobile" class="rectangle">
-      <h2 id="hideOnMobile">Projects</h2>
-    </div>
+  <div id="hideOnMobile" class="rectangle">
+    <h2 id="hideOnMobile">Projects</h2>
+  </div>
 
-    <Smoothie id="projects" :weight="0.01" class="smoothie-container" style="border-left: 1px solid var(--text-color-primary); border-right: 1px solid var(--text-color-primary);">
-      <div class="projects-vertical-layout">
+  <Smoothie id="projects" :weight="0.01" class="smoothie-container" style="border-left: 1px solid var(--text-color-primary); border-right: 1px solid var(--text-color-primary);">
 
-        <div class="projects-content">
-          <div class="projects-content-inner">
-            <animated-component>
-              <div class="title">Projects</div>
-            </animated-component>
-            <div class="paragraph-text row text-left">
-              Here are a few projects I’ve worked on—ranging from professional applications developed as part of my full-time role to personal experiments and side projects. They reflect my interest in solving real problems.
-            </div>
-            <div class="paragraph-text row text-left">
-              Regardless of the complexity of the project, I bring my best and put the clients needs at the forefront. Click the button below to view some of my projects.
-            </div>
-          </div>
+    <div id="main-row" style="width: 80%; margin: auto;" class="d-flex flex-column align-items-center justify-content-center gap-4">
+      <animated-component>
+        <div class="title">Projects</div>
+      </animated-component>
+      <!-- Left text -->
+      <div class="d-flex flex-row">
 
-          <div class="projects-carousel-wrapper">
-            <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="../assets/images/sph.png" class="d-block w-100" alt="Project 1">
-                  <div class="carousel-caption d-none d-md-block rounded p-3">
-                    <h5>Sportheartt</h5>
-                    <p>Athlete measurement app.</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="../assets/images/ng-ml.png" class="d-block w-100" alt="Project 2">
-                  <div class="carousel-caption d-none d-md-block rounded p-3">
-                    <h5>NoiseGuard ML</h5>
-                    <p>Sound classification pipeline.</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="../assets/images/ims-cal.png" class="d-block w-100" alt="Project 3">
-                  <div class="carousel-caption d-none d-md-block rounded p-3">
-                    <h5>Calibration system</h5>
-                    <p>With Hubspot integration.</p>
-                  </div>
-                </div>
+        <div class="paragraph-text text-center">
+          Here are a few projects I’ve worked on—ranging from professional applications developed as part of my full-time role to personal experiments and side projects.
+          They reflect my interest in solving real problems.
+        </div>
+
+      </div>
+
+      <!-- Right carousel -->
+      <div class="d-flex flex-row">
+        <div class="carousel-wrapper">
+          <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" @click="$router.push({name: 'project-view'})">
+              <div class="carousel-item active">
+                <img src="../assets/images/sph.png" class="d-block w-100" alt="Project 1">
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-              </button>
+              <div class="carousel-item">
+                <img src="../assets/images/ng-ml.png" class="d-block w-100" alt="Project 2">
+              </div>
+              <div class="carousel-item">
+                <img src="../assets/images/ims-cal.png" class="d-block w-100" alt="Project 3">
+              </div>
             </div>
-          </div>
-
-          <div class="button-row mt-5">
-            <button @click="$router.push({name: 'project-view'})" class="main-button" tabIndex="-1" style="width: 50%;"> Project view</button>
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
           </div>
         </div>
       </div>
-    </Smoothie>
-  </template>
+
+      <div class="d-flex flex-row w-100 justify-content-center mt-2">
+        <button @click="$router.push({name: 'project-view'})" class="side-button" tabIndex="-1" style="width: 50%;"> Project view</button>
+      </div>
+
+    </div>
+  </Smoothie>
+</template>
 
 <script setup>
 import { Smoothie } from 'vue-smoothie';
@@ -105,141 +96,90 @@ const props = defineProps({
   transform: rotate(90deg);
 }
 
-.projects-vertical-layout {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  min-height: 80vh;
-}
-
-.projects-content {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 0 2rem 200px;
-  text-align: left;
-  align-items: flex-center;
-}
-
-.projects-content-inner {
-  padding-left: 1rem;
-}
-
-.projects-carousel-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 2rem 0 0 0;
-}
-
-.carousel {
-  width: 100%;
-  max-width: 1000px;
-  min-height: 350px;
-}
-
-.paragraph-text {
-  margin-bottom: 1.5rem;
-}
-
-.button-row {
-  display: flex;
-  margin-bottom: 2rem;
-}
-
 @media only screen and (max-width: 1770px) {
   .rectangle{
     margin-left: 0 !important;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-  .projects-content {
-    margin-left: 120px;
-  }
 }
 
 @media only screen and (max-width: 1100px) {
   .rectangle{
-      max-width: 90px;
+    max-width: 90px;
   }
-  .projects-content {
-    margin-left: 60px;
-  }
+}
+
+#main-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
 }
 
 @media only screen and (max-width: 800px) {
+
   #hideOnMobile{
     display: none;
   }
-  .projects-vertical-layout {
-    align-items: center;
+  #main-row {
+    width: 100% !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 3rem;
   }
-  .projects-content {
-    margin: 0;
-    padding: 0 1rem;
-    text-align: center;
-    max-width: 100%;
-  }
-  .projects-content-inner {
-    padding-left: 0;
-  }
-  .projects-carousel-wrapper {
-    margin-top: 1rem;
-  }
-  .paragraph-text {
-    margin-bottom: 1.2rem;
-  }
-  .button-row {
-    margin-bottom: 1.5rem;
-  }
-  .carousel {
-    width: 100vw;
-    min-height: 200px;
-    padding: 0 0.5rem;
+  .paragraph-text{
+    font-size: 1rem !important;
   }
 }
 
-.carousel-caption {
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-  padding: 1rem;
-  color: white;
-  backdrop-filter: blur(4px);
-  max-width: 90%;
-  margin: auto;
+.carousel-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.carousel-caption h5,
-.carousel-caption p {
-  color: white;
-  margin: 0;
-  padding: 0;
-  background: transparent;
+.carousel-wrapper:hover {
+  cursor: pointer;
 }
 
-.carousel-item {
-  transition: transform 0.6s ease-in-out;
+.carousel {
+  width: 100%;
 }
 
 .carousel-item img {
   border-radius: 12px;
+  width: 100%;
+  height: auto;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: rgba(255, 255, 255, 0.8); /* light background */
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
-  padding: 15px;
+  padding: 20px;
   background-size: 60% 60%;
+  margin: 0 10px;
 }
-
-.carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.5 0l-4 4 4 4V0z'/%3E%3C/svg%3E");
-}
-
+.carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.5 0v8l4-4-4-4z'/%3E%3C/svg%3E");
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  background-size: 100% 100%;
+  width: 36px;
+  height: 36px;
+}
+
+
+.carousel-control-prev {
+  left: -4%;
+}
+
+.carousel-control-next {
+  right: -4%;
 }
 
 </style>
