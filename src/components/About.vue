@@ -11,12 +11,12 @@
           <div class="title">About me</div>
         </animated-component>
 
-        <div class="paragraph-text d-flex flex-row text-left">
+        <div class="paragraph-text">
           I work full-time as a software engineer, based in Ljubljana, Slovenia.
           I'm passionate about software development, but my hobbies extend to artificial intelligence, fitness, crypto, finance and cars.
         </div>
 
-        <div class="paragraph-text d-flex flex-row text-left">
+        <div class="paragraph-text">
           I design and implement architecture for modern web applications.
           While my main focus is backend development, I also contribute to UI development and enjoy scripting in Python,
           to automate tasks and streamline workflows.
@@ -185,11 +185,10 @@ const props = defineProps({
     justify-content: center;
     min-width: 0;
     max-width: 50%;
+    padding: 0 1rem 0 1rem;
   }
 
-  #main-row .main-col:first-child {
-  padding-left: 2rem; /* or try 3rem for more space */
-  }
+
 
   @media only screen and (max-width: 800px) {
     #hideOnMobile{

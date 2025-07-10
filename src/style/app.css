@@ -48,10 +48,12 @@ html[theme='dark'] {
 }
 
 .paragraph-text {
+    display: flex;
+    flex-direction: row;
     color: var(--text-color-secondary);
     font-size: 1rem;
-    text-align: left;
     font-weight: 300;
+    text-align: left;
 }
 
 .title:before{
