@@ -20,7 +20,7 @@
                   <font-awesome-icon class="mobile-icon-link" :class="{'fa-solid fa-xmark': nav_open}" icon="fa-solid fa-bars" @click="toggleNavbar"/>
                 </div>
             </div>
-
+          <transition name="mobile-fade-slide">
             <div class="dropdown-menu open" v-show="mobile_nav">
                 <li><a href="/#home" @click="closeMobileNav">Home</a></li>
                 <li><a href="/#about" @click="closeMobileNav">About</a></li>
@@ -28,6 +28,7 @@
                 <li><a href="/#contact" @click="closeMobileNav">Contact</a></li>
                 <li :class="{ 'hover-dark': darkMode, 'hover-light': !darkMode }"><font-awesome-icon class="mobile-icon-link" :icon="darkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'" @click="callEmit"/></li>
             </div>
+          </transition>
         </div>
    
 </template>
@@ -162,7 +163,6 @@ a:hover {
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
   overflow: hidden;
-  transition: max-height .3s ease;
   max-height: 0;
   z-index: 3;
 }
@@ -230,6 +230,20 @@ li:hover {
 
 .hover-dark:hover .mobile-icon-link {
   color: #FF4F0F;
+}
+
+.mobile-fade-slide-enter-active, .mobile-fade-slide-leave-active {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.mobile-fade-slide-enter-from, .mobile-fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.mobile-fade-slide-enter-to, .mobile-fade-slide-leave-from {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media(max-width: 992px) {
