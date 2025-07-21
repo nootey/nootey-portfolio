@@ -41,7 +41,7 @@ html[theme='dark'] {
 }
 
 * {
-    font-size: 1.15rem;
+    font-size: 1rem;
     color: var(--text-color-primary);
     background: var(--background-color-primary);
     font-family: "Poppins", sans-serif;
