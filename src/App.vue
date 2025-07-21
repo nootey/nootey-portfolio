@@ -58,8 +58,6 @@ html {
   position: sticky;
 }
 
-
-
 .title {
   font-size: 1.4rem;
   font-weight: 1000;

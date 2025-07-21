@@ -4,7 +4,7 @@
             <div class="navbar">
                 <!-- logo -->
                 <div class="logo flex flex-row text-center align-items-center mt-1">
-                    <img src="../assets/images/nootey.png" height="33"/>
+                    <img src="../assets/images/n.png" height="33"/>
                 </div>
             
                 <!-- nav -->
@@ -102,11 +102,10 @@ function closeMobileNav() {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0;
 }
 
 .navbar .logo {
-  display: flex;
   align-items: center;
 }
 
