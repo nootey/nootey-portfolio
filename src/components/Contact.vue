@@ -44,17 +44,17 @@
 
       </div>
 
-      <div class="main-col col w-50">
+      <div class="main-col col w-50 d-flex gap-2 flex-column">
         <animated-component>
           <div class="title">Get in touch</div>
         </animated-component>
 
-        <div class="paragraph-text flex flex-row p-3 text-left">
+        <div class="paragraph-text flex flex-row text-left">
           Have any questions? Feel free to contact me, and I'll be happy to assist you as soon as possible.
           You can also directly write to the email below.
         </div>
 
-        <div class="paragraph-text flex flex-row p-3">
+        <div class="paragraph-text flex flex-row p-2 mt-4">
           <div class="row" style="border-left: 5px solid var(--accent-color); padding-left: 10px;">
             <div class="row"><b>Email</b></div>
             <div class="row">
@@ -99,19 +99,21 @@ function sendMessage() {
 </script>
 
 <style scoped>
+
 form {
     max-width: 50rem;
     margin: 0 auto;
     .form-control {
       margin: 20px;
       background-color: var(--background-color-secondary);
-      border-radius: 2rem;
+      border-radius: 1rem;
       border: none;
       box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.11);
 
       &.thick {
         height: 3.3rem;
-        padding: .5rem 3.5rem;
+        padding: .5rem 1.8rem;
+        font-size: 1rem;
       }
 
       &:focus {
@@ -122,12 +124,10 @@ form {
 
     .message .form-control {
       padding: .5rem 1.8rem;
+      font-size: 1rem;
     }
 
     ::placeholder {
-      font-family: 'Quicksand', sans-serif;
-      font-weight: 600;
-      font-size: 1.1rem;
       color: #838788;
       position: relative;
       left: 0;
@@ -135,9 +135,7 @@ form {
 
     input,
     textarea {
-      font-family: 'Quicksand', sans-serif;
       color: #212529;
-      font-size: 1.1rem;
       max-height: 500px;
     }
 
