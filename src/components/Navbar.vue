@@ -9,11 +9,11 @@
             
                 <!-- nav -->
                 <ul class="links" v-show="!mobile">
-                    <li id="link-item"><a href="/#home">Home</a></li>
-                    <li id="link-item"><a href="/#about">About</a></li>
-                    <li id="link-item"><a href="/#projects">Projects</a></li>
-                    <li id="link-item"><a href="/#contact">Contact</a></li>
-                  <font-awesome-icon id="link-item" class="mobile-icon-link" :class="{ 'hover-dark': darkMode, 'hover-light': !darkMode }" :icon="darkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'" @click="callEmit"/>
+                    <li class="link-item"><a href="/#home">Home</a></li>
+                    <li class="link-item"><a href="/#about">About</a></li>
+                    <li class="link-item"><a href="/#projects">Projects</a></li>
+                    <li class="link-item"><a href="/#contact">Contact</a></li>
+                    <li class="link-item" :class="{ 'hover-dark': darkMode, 'hover-light': !darkMode }"><font-awesome-icon class="mobile-icon-link" :icon="darkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'" @click="callEmit"/></li>
                 </ul>
 
                 <div class="toggle-btn">
@@ -22,12 +22,11 @@
             </div>
 
             <div class="dropdown-menu open" v-show="mobile_nav">
-                <li @click="closeMobileNav"><a href="/#home">Home</a></li>
-                <li @click="closeMobileNav"><a href="/#about">About</a></li>
-                <li @click="closeMobileNav"><a href="/#projects">Projects</a></li>
-                <li @click="closeMobileNav"><a href="/#contact">Contact</a></li>
-                <li><font-awesome-icon class="mobile-icon-link" :class="darkMode ? 'hover-dark' : 'hover-light'" :icon="darkMode ? 'fa-solid fa-moon' : 'fa-solid fa-sun'" @click="callEmit"/></li>
-
+                <li><a href="/#home" @click="closeMobileNav">Home</a></li>
+                <li><a href="/#about" @click="closeMobileNav">About</a></li>
+                <li><a href="/#projects" @click="closeMobileNav">Projects</a></li>
+                <li><a href="/#contact" @click="closeMobileNav">Contact</a></li>
+                <li :class="{ 'hover-dark': darkMode, 'hover-light': !darkMode }"><font-awesome-icon class="mobile-icon-link" :icon="darkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'" @click="callEmit"/></li>
             </div>
         </div>
    
@@ -123,7 +122,7 @@ function closeMobileNav() {
   flex: 1;
 }
 
-.navbar .links #link-item {
+.navbar .links .link-item {
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -192,57 +191,45 @@ a:hover {
   background: transparent;
 }
 
-.dropdown-menu li a:after {
-  content: '';
-  display: block;
-  margin: auto;
-  height: 2px;
-  width: 0;
-  background: var(--accent-color);
-  transition: width 0.5s ease;
-}
-
-.dropdown-menu li a:hover:after {
-  width: 100%;
+.navbar .links {
+  margin-top: 1rem;
+  align-items: center;
 }
 
 .dropdown-menu li a:hover {
   color: var(--accent-color);
 }
 
-.navbar .links {
-  margin-top: 1rem;
-  align-items: center;
-}
-
-.navbar .links li:after {
+.navbar .links li:after,
+.dropdown-menu li a:after {
   content: '';
   display: block;
   margin: auto;
-  height: 3px;
+  height: 2px; /* Unified height; adjust to 3px if preferred */
   width: 0;
   background: transparent;
-  transition: width .5s ease, background-color .5s ease;
+  transition: width 0.5s ease, background-color 0.5s ease;
 }
 
-.navbar .links li:hover:after {
+.navbar .links li:hover:after,
+.dropdown-menu li a:hover:after {
   width: 100%;
   background: var(--accent-color);
 }
 
-.dropdown-menu li:hover {
+li:hover {
   cursor: pointer;
 }
 
-.mobile-icon-link:hover {
-  cursor: pointer;
+.mobile-icon-link {
+  color: var(--text-color-primary);
 }
 
-.hover-light:hover {
+.hover-light:hover .mobile-icon-link {
   color: #FFB10F;
 }
 
-.hover-dark:hover {
+.hover-dark:hover .mobile-icon-link {
   color: #FF4F0F;
 }
 
