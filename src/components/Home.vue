@@ -43,12 +43,9 @@
 
     </div>
 
-    <div class="d-flex flex-row mx-auto text-center justify-content-center p-3 mt-5">
-      <a class="arrow bounce d-flex flex-col col-auto min-width-col" href="#about">
-        <img v-if="darkMode" src="../assets/images/arrow-light.png"
-             width="50"/>
-        <img v-else src="../assets/images/arrow-dark.png"
-             width="50"/>
+    <div class="d-flex flex-row mx-auto text-center justify-content-center">
+      <a href="#about" >
+        <div class="arrows"></div>
       </a>
     </div>
 
@@ -66,6 +63,7 @@ const props = defineProps({
 </script>
 
 <style scoped>
+
 .typed-container {
   display: flex;
 }
@@ -91,24 +89,55 @@ const props = defineProps({
   50% { border-color: var(--accent-color); }
 }
 
-.arrow {
-  text-align: center;
-  margin: 8% 0;
+.arrows {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-top: 7.5rem;
+  margin-left: -2.25rem;
 }
 
-.bounce {
-  animation: bounce 2s infinite;
+.arrows:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-left: 10px solid rgba(0, 0, 0, 0.7);
+  border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+  transform: translate(10px, 53px) rotate(-45deg);
+  animation: arrows 3s linear infinite;
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
+.arrows:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-left: 10px solid rgba(0, 0, 0, 0.7);
+  border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+  transform: translate(26px, 0px) rotate(-45deg);
+  animation: arrows 3s linear infinite -1.5s;
+}
+
+@keyframes arrows {
+  0% {
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    transform: translate(-6.67px, -6.67px) rotate(-45deg);
   }
-  40% {
-    transform: translateY(-20px);
+  10%, 90% {
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    border-bottom: 10px solid rgba(0, 0, 0, 0);
   }
-  60% {
-    transform: translateY(-10px);
+  50% {
+    border-left: 10px solid rgba(0, 0, 0, 0.7);
+    border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+    transform: translate(-6.67px, 0px) rotate(-45deg);
+  }
+  100% {
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    transform: translate(-6.67px, 26px) rotate(-45deg);
   }
 }
 
@@ -147,5 +176,9 @@ const props = defineProps({
   #col-text {
     margin-top: 10px;
   }
+  .arrows {
+    margin-top: 3rem;
+  }
 }
+
 </style>
