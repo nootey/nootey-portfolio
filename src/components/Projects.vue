@@ -20,25 +20,51 @@
       </div>
 
       <!-- Right carousel -->
-      <div class="d-flex flex-row">
+      <div class="d-flex flex-row" style="width: 80%">
         <div class="carousel-wrapper">
           <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" @click="$router.push({name: 'project-view'})">
               <div class="carousel-item active">
-                <img src="../assets/images/sph.png" class="d-block w-100" alt="Project 1">
+                <img src="../assets/images/sph_v3.png" class="d-block w-100" alt="SPH">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="carousel-text">SPH</h5>
+                  <p class="carousel-text">Measurement platform.</p>
+                </div>
+              </div>
+              <div class="carousel-item active">
+                <img src="../assets/images/wealthwarden.png" class="d-block w-100" alt="WealthWarden">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="carousel-text">WealthWarden</h5>
+                  <p class="carousel-text">Personal finance app.</p>
+                </div>
               </div>
               <div class="carousel-item">
-                <img src="../assets/images/ng-ml.png" class="d-block w-100" alt="Project 2">
+                <img src="../assets/images/ng-ml_v2.png" class="d-block w-100" alt="NoiseGuard ML">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="carousel-text">NoiseGuard ML</h5>
+                  <p class="carousel-text">Audio classification server.</p>
+                </div>
               </div>
               <div class="carousel-item">
-                <img src="../assets/images/ims-cal.png" class="d-block w-100" alt="Project 3">
+                <img src="../assets/images/ims-cal_v2.png" class="d-block w-100" alt="Calibration management">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="carousel-text">Calibration system</h5>
+                  <p class="carousel-text">Internal management tool.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="../assets/images/ai_bot.png" class="d-block w-100" alt="Calibration management">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="carousel-text">AI Assistant</h5>
+                  <p class="carousel-text">Company knowledge manager.</p>
+                </div>
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
+              <span class="custom-arrow left-arrow"></span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
+              <span class="custom-arrow right-arrow"></span>
             </button>
           </div>
         </div>
@@ -157,14 +183,6 @@ const props = defineProps({
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  padding: 20px;
-  background-size: 60% 60%;
-  margin: 0 10px;
-}
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
   background-color: transparent;
   border-radius: 0;
   padding: 0;
@@ -173,6 +191,28 @@ const props = defineProps({
   height: 36px;
 }
 
+.custom-arrow {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background-color: var(--text-color-primary);
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+
+/* Thin Left Arrow */
+.left-arrow {
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='15 18 9 12 15 6'/></svg>");
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='15 18 9 12 15 6'/></svg>");
+}
+
+/* Thin Right Arrow */
+.right-arrow {
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='9 18 15 12 9 6'/></svg>");
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='9 18 15 12 9 6'/></svg>");
+}
 
 .carousel-control-prev {
   left: -4%;
@@ -182,4 +222,16 @@ const props = defineProps({
   right: -4%;
 }
 
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.carousel-text {
+  background-color: transparent;
+  color: white;
+}
 </style>
