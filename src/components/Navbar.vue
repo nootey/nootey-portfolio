@@ -17,7 +17,7 @@
                 </ul>
 
                 <div class="toggle-btn">
-                  <font-awesome-icon class="mobile-icon-link" :class="{'fa-solid fa-xmark': nav_open}" icon="fa-solid fa-bars" @click="toggleNavbar"/>
+                  <font-awesome-icon class="mobile-icon-link" :icon="nav_open ? ['fas', 'xmark'] : ['fas', 'bars']" @click="toggleNavbar"/>
                 </div>
             </div>
           <transition name="mobile-fade-slide">
