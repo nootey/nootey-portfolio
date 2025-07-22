@@ -4,49 +4,55 @@
       <div class="project-title" style="background-color: transparent;">
         {{ title }}
       </div>
-      <font-awesome-icon
-          :icon="isOpen ? ['fas', 'xmark'] : ['fas', 'expand']"
-          @click="toggleCollapse"
-          class="icon-button"
-      />
     </div>
 
-    <transition
-        @enter="onEnter"
-        @after-enter="onAfterEnter"
-        @leave="onLeave"
-        @after-leave="onAfterLeave"
-    >
-      <div v-if="isOpen" ref="content" class="project-description-wrapper">
-        <div class="project-description">
-          <p>{{ description }}</p>
+    <div class="project-description-wrapper">
+      <div class="project-description">
+        <div v-if="image" class="d-flex flex-column w-100 justify-content-center align-items-center">
+          <img :src="image" :alt="title + ' image'" class="project-image" width="100%" />
+        </div>
 
-          <div v-if="website">
-            <p>
-              Website:
-              <a :href="website" target="_blank" rel="noopener noreferrer">{{ website }}</a>
-            </p>
+        <p class="description">{{ description }}</p>
+
+        <div class="chips-tech-wrapper">
+          <div class="keyword-chips">
+            <span v-for="(word, index) in key_words" :key="'kw-' + index" class="chip">
+              {{ word }}
+            </span>
           </div>
 
-          <p>Tech stack:</p>
-          <ul class="tech-stack">
-            <li v-for="(tech, index) in tech_stack" :key="index">• {{ tech }}</li>
-          </ul>
-
-          <p>Key words:</p>
-          <ul class="tech-stack">
-            <li v-for="(word, index) in key_words" :key="index">• {{ word }}</li>
-          </ul>
-
-          <slot />
+          <div class="tech-stack-chips">
+            <span v-for="(tech, index) in tech_stack" :key="'tech-' + index" :title="tech">
+              <img
+                  v-if="techIcons[tech]"
+                  :src="techIcons[tech]"
+                  width="27"
+                  height="27"
+              />
+              <span v-else class="chip tech-chip">{{ tech }}</span>
+            </span>
+          </div>
         </div>
+
+        <slot />
       </div>
-    </transition>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, nextTick } from 'vue';
+
+import vueIcon from "../../assets/language-icons/vue.svg";
+import goIcon from "../../assets/language-icons/go.svg";
+import kotlinIcon from "../../assets/language-icons/kotlin.svg";
+import mysqlIcon from "../../assets/language-icons/mysql.svg";
+import laravelIcon from "../../assets/language-icons/laravel.svg";
+import pythonIcon from "../../assets/language-icons/python.svg";
+import angularIcon from "../../assets/language-icons/angular.svg";
+import nextIcon from "../../assets/language-icons/next_js.svg";
+import mongoIcon from "../../assets/language-icons/mongo.svg";
+import postgresIcon from "../../assets/language-icons/postgres.svg";
+import prismaIcon from "../../assets/language-icons/prisma.svg";
 
 const props = defineProps({
   title: String,
@@ -55,44 +61,23 @@ const props = defineProps({
   key_words: Array,
   website: String,
   index: Number,
+  image: String,
 });
 
-const isOpen = ref(props.index === 0);
-const content = ref(null);
-
-const toggleCollapse = () => {
-  isOpen.value = !isOpen.value;
+const techIcons = {
+  Go: goIcon,
+  Vue: vueIcon,
+  Kotlin: kotlinIcon,
+  MySQL: mysqlIcon,
+  Laravel: laravelIcon,
+  Python: pythonIcon,
+  Angular: angularIcon,
+  NextJS: nextIcon,
+  MongoDB: mongoIcon,
+  Postgres: postgresIcon,
+  Prisma: prismaIcon,
 };
 
-const duration = 500;
-
-const onEnter = (el) => {
-  el.style.height = '0';
-  el.style.opacity = '0';
-  el.style.transition = `all ${duration}ms cubic-bezier(0.25, 0.8, 0.25, 1)`;
-  nextTick(() => {
-    el.style.height = el.scrollHeight + 'px';
-    el.style.opacity = '1';
-  });
-};
-
-const onAfterEnter = (el) => {
-  el.style.height = 'auto';
-  el.style.transition = '';
-};
-
-const onLeave = (el) => {
-  el.style.height = el.scrollHeight + 'px';
-  el.style.opacity = '1';
-  void el.offsetHeight;
-  el.style.transition = `all ${duration}ms cubic-bezier(0.25, 0.8, 0.25, 1)`;
-  el.style.height = '0';
-  el.style.opacity = '0';
-};
-
-const onAfterLeave = (el) => {
-  el.style.transition = '';
-};
 </script>
 
 <style scoped>
@@ -103,14 +88,15 @@ const onAfterLeave = (el) => {
   border: 1px solid var(--border-color);
   border-radius: 16px;
   background-color: var(--background-color-secondary);
-  text-align: left;
+  text-align: center;
   color: var(--text-color-primary);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  padding: 0;
-  overflow: hidden;
+  height: 550px;
 }
 
 .project-header {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
   background-color: var(--background-color-secondary);
   padding: 20px;
   font-size: 20px;
@@ -118,42 +104,93 @@ const onAfterLeave = (el) => {
   border-bottom: 1px solid var(--border-color);
 }
 
-.project-title {
-  margin: 0;
-}
-
-.icon-button {
-  border: none;
-  background: transparent;
-  font-size: 20px;
-  padding: 0;
-  cursor: pointer;
-}
-
 .project-description-wrapper {
-  overflow: hidden;
+  flex: 1;
+  overflow-y: hidden;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
 }
 
 .project-description {
   padding: 10px 20px 20px;
-  text-align: left;
+  text-align: center;
 }
 
-.tech-stack {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: var(--text-color-tertiary);
-  list-style: none;
-  padding-left: 0;
+.description {
+  height: 100px;
+  overflow: auto;
 }
 
-.tech-stack li {
-  margin-bottom: 4px;
+.chips-tech-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 15px;
+  flex-wrap: wrap;
 }
 
-@media(max-width: 750px) {
-  .project-description {
-    text-align: center;
+.keyword-chips, .tech-stack-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  background-color: var(--background-color-tertiary, #f1f1f1);
+  color: var(--text-color-secondary, #555);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease;
+}
+
+.chip:hover {
+  background-color: var(--background-color-secondary, #e0e0e0);
+  cursor: default;
+}
+
+.tech-chip {
+  background-color: var(--background-color-secondary, #e8e8e8);
+  color: var(--text-color-primary, #333);
+}
+
+@media(max-width: 925px) {
+  .chips-tech-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  .tech-stack-chips {
+    padding: 1rem;
+  }
+}
+
+@media(max-width: 725px) {
+  .chips-tech-wrapper {
+    flex-direction: row;
+    padding: 0;
+  }
+  .tech-stack-chips {
+    padding: 0;
+  }
+}
+
+@media(max-width: 545px) {
+  .project-card {
+      height: 490px;
+  }
+}
+
+@media(max-width: 500px) {
+  .chips-tech-wrapper {
+    padding: 1rem;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .tech-stack-chips {
+    padding: 1rem;
+
   }
 }
 </style>
