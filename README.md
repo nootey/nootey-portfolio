@@ -1,4 +1,4 @@
-# personal-portfolio
+# nootey-portfolio
 
 > I wanted to build a small project showcase website. I am by no means a front-end developer.
 
@@ -11,7 +11,3 @@ VITE_FORMSPREE_ID=<id>
 VITE_WEBSITE_NAME=<name>
 ```
 
-<hr>
-
-The live website is available at: 
-- <url>
