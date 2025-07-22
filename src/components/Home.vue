@@ -44,7 +44,7 @@
     </div>
 
     <div class="d-flex flex-row mx-auto text-center justify-content-center">
-      <a href="#about" >
+      <a href="#about">
         <div class="arrows"></div>
       </a>
     </div>
@@ -95,48 +95,43 @@ const props = defineProps({
   height: 40px;
   margin-top: 7.5rem;
   margin-left: -2.25rem;
+  color: var(--text-color-primary); /* controls arrow color */
 }
 
-.arrows:before {
+.arrows:before, .arrows:after {
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
-  border-left: 10px solid rgba(0, 0, 0, 0.7);
-  border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+  border-left: 10px solid currentColor;
+  border-bottom: 10px solid currentColor;
   transform: translate(10px, 53px) rotate(-45deg);
   animation: arrows 3s linear infinite;
 }
 
 .arrows:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-left: 10px solid rgba(0, 0, 0, 0.7);
-  border-bottom: 10px solid rgba(0, 0, 0, 0.7);
   transform: translate(26px, 0px) rotate(-45deg);
-  animation: arrows 3s linear infinite -1.5s;
+  animation-delay: -1.5s;
 }
 
 @keyframes arrows {
   0% {
-    border-left: 10px solid rgba(0, 0, 0, 0);
-    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
     transform: translate(-6.67px, -6.67px) rotate(-45deg);
   }
   10%, 90% {
-    border-left: 10px solid rgba(0, 0, 0, 0);
-    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
   }
   50% {
-    border-left: 10px solid rgba(0, 0, 0, 0.7);
-    border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+    border-left: 10px solid currentColor;
+    border-bottom: 10px solid currentColor;
     transform: translate(-6.67px, 0px) rotate(-45deg);
   }
   100% {
-    border-left: 10px solid rgba(0, 0, 0, 0);
-    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
     transform: translate(-6.67px, 26px) rotate(-45deg);
   }
 }
