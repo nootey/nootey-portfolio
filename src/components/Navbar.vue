@@ -4,9 +4,9 @@
             <div class="navbar">
                 <!-- logo -->
                 <div class="logo flex flex-row text-center align-items-center mt-1">
-                    <img src="../assets/images/n.png" height="33"/>
+                  <img :src="darkMode ? nLight : nDark" height="33" />
                 </div>
-            
+
                 <!-- nav -->
                 <ul class="links" v-show="!mobile">
                     <li class="link-item"><a href="/#home">Home</a></li>
@@ -35,6 +35,8 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted, watch } from 'vue';
+import nLight from '../assets/images/n-light.png';
+import nDark from '../assets/images/n-dark.png';
 
 const props = defineProps({
   darkMode: Boolean
