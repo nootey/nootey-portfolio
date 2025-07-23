@@ -10,4 +10,6 @@ The project requires an `.env` file:
 VITE_FORMSPREE_ID=<id>
 VITE_WEBSITE_NAME=<name>
 ```
+---
 
+The website is available via the following link: https://nootey.github.io/
