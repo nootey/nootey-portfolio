@@ -103,6 +103,9 @@ function sendMessage() {
 form {
     max-width: 50rem;
     margin: 0 auto;
+    .form-control:focus{
+      color: var(--text-color-primary);
+    }
     .form-control {
       margin: 20px;
       background-color: var(--background-color-secondary);
