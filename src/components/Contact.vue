@@ -135,7 +135,7 @@ form {
 
     input,
     textarea {
-      color: #212529;
+      color: var(--text-color-primary);
       max-height: 500px;
     }
 
