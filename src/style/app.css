@@ -13,6 +13,8 @@ html[theme='light'] {
     --text-color-tertiary: #9B9B9B;
     --title-color-primary: #3A4653;
     --footer-color: #262323;
+    --scrollbar-thumb-color: #888;
+    --scrollbar-thumb-hover-color: #555;
 }
   
 html[theme='dark'] {
@@ -26,6 +28,20 @@ html[theme='dark'] {
     --text-color-tertiary: #808080;
     --title-color-primary: #CCCCCC;
     --footer-color: #222121;
+    --scrollbar-thumb-color: #888;
+    --scrollbar-thumb-hover-color: #555;
+}
+
+body {
+    background-color: var(--background-color-primary);
+    color: var(--text-color-primary);
+}
+
+* {
+    font-size: 1rem;
+    color: var(--text-color-primary);
+    background: var(--background-color-primary);
+    font-family: "Poppins", sans-serif;
 }
 
 .smoothie-container {
@@ -38,13 +54,6 @@ html[theme='dark'] {
     background: var(--background-color-primary);
     align-content: center;
     gap: 10px;
-}
-
-* {
-    font-size: 1rem;
-    color: var(--text-color-primary);
-    background: var(--background-color-primary);
-    font-family: "Poppins", sans-serif;
 }
 
 .paragraph-text {
@@ -214,11 +223,13 @@ box-shadow: none;
     }
 }
 
+/* Firefox (uses standard props) */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #888 transparent;
+    scrollbar-color: var(--scrollbar-thumb-color) transparent;
 }
 
+/* Chrome, Edge, Safari */
 *::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -229,13 +240,19 @@ box-shadow: none;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #888;
+    background-color: var(--scrollbar-thumb-color);
     border-radius: 4px;
     border: 2px solid transparent;
     background-clip: content-box;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
+    background-color: var(--scrollbar-thumb-hover-color);
+}
+
+*::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+    width: 0;
 }
 
