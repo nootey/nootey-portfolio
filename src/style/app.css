@@ -189,6 +189,13 @@ box-shadow: none;
     }
 }
 
+@media only screen and (max-width: 1000px) {
+    .smoothie-container {
+        border-left: none !important;
+        border-right: none !important;
+    }
+}
+
 
 @media only screen and (max-width: 800px) {
     .smoothie-container {
