@@ -43,8 +43,6 @@
 
     </div>
 
-
-
     <div class="d-flex flex-row mx-auto text-center justify-content-center">
       <a href="#about">
         <div class="arrows"></div>

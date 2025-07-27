@@ -20,7 +20,7 @@
       </div>
 
       <!-- Right carousel -->
-      <div class="d-flex flex-row" style="width: 80%">
+      <div id="inner" class="d-flex flex-row" style="width: 80%">
         <div class="carousel-wrapper">
           <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" @click="$router.push({name: 'project-view'})">
@@ -154,10 +154,13 @@ const props = defineProps({
     width: 100% !important;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 3rem;
+  }
+  #inner {
+    width: 100% !important;
   }
   .paragraph-text{
     font-size: 1rem !important;
+    width: 100% !important;
   }
 }
 
