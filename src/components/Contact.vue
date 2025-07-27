@@ -6,9 +6,9 @@
 
   <Smoothie id="contact" :weight="0.01" class="smoothie-container" style="margin-bottom: 80px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; border-left: 1px solid var(--text-color-primary); border-right: 1px solid var(--text-color-primary);">
 
-    <div id="main-row" style="width: 90%; margin-right: auto;" class="row align-items-center justify-content-center g-2">
+    <div id="main-row" style="width: 90%; margin-right: auto;" class="d-flex flex-row align-items-center justify-content-center g-2">
 
-      <div class="main-col col w-50 p-2">
+      <div id="main-col" class="d-flex flex-column w-50">
 
         <form id="form"
               :action="formActionUrl"
@@ -37,14 +37,14 @@
 
           <div class="row mt-3 w-75" style="margin-left: 25%; !important">
             <div class="col" >
-              <button type="submit" class="main-button" tabIndex="-1" >Send message</button>
+              <button id="button" type="submit" class="main-button" tabIndex="-1" >Send</button>
             </div>
           </div>
         </form>
 
       </div>
 
-      <div class="main-col col w-50 d-flex gap-2 flex-column">
+      <div id="main-col" class="d-flex flex-column w-50 gap-2">
         <animated-component>
           <div class="title">Get in touch</div>
         </animated-component>
@@ -54,7 +54,7 @@
           You can also directly write to the email below.
         </div>
 
-        <div class="paragraph-text flex flex-row p-2 mt-4">
+        <div id="email" class="paragraph-text d-flex flex-row p-2 mt-4">
           <div class="row" style="border-left: 5px solid var(--accent-color); padding-left: 10px;">
             <div class="row"><b>Email</b></div>
             <div class="row">
@@ -201,23 +201,61 @@ form {
       margin: 10px !important;
     }
   }
-  textarea {
-    max-height: 125px !important;
-  }
   #hideOnMobile{
     display: none;
   }
+  #email {
+    width: 50% !important;
+  }
   #main-row {
     width: 100% !important;
-    margin: 0 auto !important;
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    padding: 1rem;
+    gap: 2rem;
   }
-  .main-col {
+  #main-col {
     width: 100% !important;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
   }
   .paragraph-text{
     font-size: 1rem !important;
+  }
+}
+
+@media only screen and (max-width: 625px) {
+
+  #button {
+    font-size: 0.8rem !important;
+  }
+
+  #email {
+    width: 70% !important;
+  }
+
+  #form {
+    width: 75% !important;
+    border-top: 4px solid var(--accent-color) !important;
+    border-left: 4px solid var(--accent-color) !important;
+  }
+
+  .form-control {
+    &.thick {
+      height: 2rem !important;
+      padding: .5rem 1.25rem !important;
+      font-size: 0.9rem !important;
+    }
+  }
+
+  .message .form-control {
+    padding: .5rem 1.25rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  textarea {
+    max-height: 125px !important;
   }
 }
 
